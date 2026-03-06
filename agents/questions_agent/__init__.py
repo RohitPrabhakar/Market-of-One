@@ -1,5 +1,5 @@
 """
-ARCĀ Questions Agent
+Market-of-One Questions Agent
 ---------------------
 Takes a business profile + owner-provided context
 (common customers, top services, frequent questions)
@@ -14,9 +14,9 @@ the questions themselves are already personalized.
 import json
 
 
-SYSTEM_PROMPT = """You are the ARCĀ Questions Agent.
+SYSTEM_PROMPT = """You are the Market-of-One Questions Agent.
 
-A business owner has loaded their business into the ARCĀ system. 
+A business owner has loaded their business into the Market-of-One system. 
 Your job: generate exactly 3 onboarding questions to ask their website visitors.
 
 These questions must:

@@ -1,6 +1,6 @@
 """
-ARCĀ OS — Market-of-One Living System
-https://github.com/rohitprabhakar/arca-os
+Market-of-One — Market-of-One Living System
+https://github.com/rohitprabhakar/market-of-one
 """
 from flask import Flask, render_template, jsonify, request, session
 import json, os, uuid, time
@@ -8,7 +8,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 app = Flask(__name__)
-app.secret_key = os.environ.get("SECRET_KEY", "arca-os-dev-key-change-in-prod")
+app.secret_key = os.environ.get("SECRET_KEY", "market-of-one-dev-key-change-in-prod")
 
 OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY", "")
 LIVE_MODE = bool(OPENAI_API_KEY and not OPENAI_API_KEY.startswith("sk-your"))
@@ -199,5 +199,5 @@ def build_mock_page(answers, biz, visitor_id):
 if __name__ == "__main__":
     label = "LIVE MODE" if LIVE_MODE else "DEMO MODE (no API key)"
     port = int(os.environ.get("PORT", 5000))
-    print(f"\n ARCA OS · {label}  →  http://localhost:{port}\n")
+    print(f"\n Market-of-One · {label}  →  http://localhost:{port}\n")
     app.run(debug=False, host="0.0.0.0", port=port)

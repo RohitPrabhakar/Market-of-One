@@ -1,4 +1,4 @@
-# ARCĀ OS — The Market-of-One Living System
+# Market-of-One — The Market-of-One Living System
 
 > *Intelligence delivered at the moment of need, inside the workflow. Zero context-switching.*
 
@@ -12,7 +12,7 @@ A multi-agent hyper-personalization engine that shows what enterprise architectu
 
 **The easiest way — one click:**
 
-[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/rohitprabhakar/arca-os)
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/rohitprabhakar/market-of-one)
 
 Click the button → click Deploy → open the URL. Done.  
 *(Leave the API key blank — Demo Mode works out of the box.)*
@@ -25,8 +25,8 @@ Click the button → click Deploy → open the URL. Done.
 
 ```bash
 # Step 1: Download the code
-git clone https://github.com/rohitprabhakar/arca-os.git
-cd arca-os
+git clone https://github.com/rohitprabhakar/market-of-one.git
+cd market-of-one
 
 # Step 2: Install (one time only)
 pip install -r requirements.txt
@@ -45,8 +45,8 @@ That's it. **No API key needed** — Demo Mode runs automatically.
 ### Option B — You have Docker installed
 
 ```bash
-git clone https://github.com/rohitprabhakar/arca-os.git
-cd arca-os
+git clone https://github.com/rohitprabhakar/market-of-one.git
+cd market-of-one
 docker compose up
 # Open http://localhost:5000
 ```
@@ -83,7 +83,7 @@ Select a customer → click **RUN PIPELINE** → watch the Living System fire.
 
 Traditional personalization: analyst reads signals → briefs writer → builds campaign → schedules send. That's days.
 
-ARCĀ OS: signal fires → agents run → personalized message ready. That's milliseconds. No human in the loop. No workflow interruption.
+Market-of-One: signal fires → agents run → personalized message ready. That's milliseconds. No human in the loop. No workflow interruption.
 
 That's **In-Flow AI** — intelligence delivered at the moment of need, inside the workflow.
 
@@ -112,13 +112,13 @@ Calculate Propensity-to-Annoy, enforce GDPR/CCPA consent, validate guardrails be
 **🟣 Channel Agent** — `[channel-agent]`  
 Optichannel routing: email vs in-app vs SMS vs push, selected by AI at the millisecond of intent.
 
-[Open an issue →](https://github.com/rohitprabhakar/arca-os/issues)
+[Open an issue →](https://github.com/rohitprabhakar/market-of-one/issues)
 
 ---
 
-## The ARCĀ Framework
+## The Market-of-One
 
-This repo is the working implementation of **ARCĀ** — Agentic Revenue & Customer Architecture.  
+This repo is the working implementation of **Market-of-One** — Agentic Revenue & Customer Architecture.  
 A leadership framework for Fortune 500 executives building enterprise Living Systems.
 
 Learn more: [rohitprabhakar.com](https://rohitprabhakar.com)

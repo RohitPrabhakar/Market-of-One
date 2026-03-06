@@ -1,5 +1,5 @@
 """
-ARCĀ Content Agent
+Market-of-One Content Agent
 ------------------
 Cerebellum layer of the Living System.
 
@@ -20,7 +20,7 @@ import json
 
 
 
-SYSTEM_PROMPT = """You are the Content Agent inside the ARCĀ Living System.
+SYSTEM_PROMPT = """You are the Content Agent inside the Market-of-One Living System.
 
 You receive a real-time customer context profile from the Context Agent
 and generate a hyper-personalized outreach message.

@@ -1,5 +1,5 @@
 """
-ARCĀ Ethics Agent — COMING SOON
+Market-of-One Ethics Agent — COMING SOON
 --------------------------------
 Frontal Lobe layer of the Living System.
 
@@ -19,7 +19,7 @@ helpful and intrusive.
 ────────────────────────────────────────────────────────────
 👋  WANT TO CONTRIBUTE THIS AGENT?
 
-This is an open-source component of the ARCĀ framework.
+This is an open-source component of the Market-of-One.
 We are actively looking for contributors to build the
 Ethics Agent. If you are working in:
 
@@ -30,7 +30,7 @@ Ethics Agent. If you are working in:
 
 ...this is your layer to own.
 
-Open an issue: https://github.com/rohitprabhakar/arca-os
+Open an issue: https://github.com/rohitprabhakar/market-of-one
 Label: [ethics-agent]
 ────────────────────────────────────────────────────────────
 

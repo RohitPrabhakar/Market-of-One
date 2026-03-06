@@ -1,5 +1,5 @@
 """
-ARCĀ Page Agent
+Market-of-One Page Agent
 ---------------
 The heart of the Market-of-One experience.
 
@@ -15,7 +15,7 @@ visitor completes onboarding. It exists for them alone.
 import json
 
 
-SYSTEM_PROMPT = """You are the ARCĀ Page Agent — a hyper-personalization engine.
+SYSTEM_PROMPT = """You are the Market-of-One Page Agent — a hyper-personalization engine.
 
 You receive:
 1. A visitor's context profile (who they are, what they need right now)

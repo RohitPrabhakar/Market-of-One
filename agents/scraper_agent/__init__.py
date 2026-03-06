@@ -1,5 +1,5 @@
 """
-ARCĀ Scraper Agent
+Market-of-One Scraper Agent
 ------------------
 Reads a business URL and extracts a structured profile:
 name, what they do, products/services, value props, tone.

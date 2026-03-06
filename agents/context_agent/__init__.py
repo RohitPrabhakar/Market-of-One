@@ -1,5 +1,5 @@
 """
-ARCĀ Context Agent — Visitor Edition
+Market-of-One Context Agent — Visitor Edition
 --------------------------------------
 Synthesizes a visitor's onboarding answers into a
 real-time context profile that drives page generation.
@@ -8,7 +8,7 @@ real-time context profile that drives page generation.
 import json, uuid
 
 
-SYSTEM_PROMPT = """You are the ARCĀ Context Agent. A visitor just answered 3 onboarding questions.
+SYSTEM_PROMPT = """You are the Market-of-One Context Agent. A visitor just answered 3 onboarding questions.
 Build their real-time context profile so the Page Agent can generate a personalized experience.
 
 Return ONLY valid JSON:
