@@ -1,0 +1,134 @@
+{
+  "demo_fitness": {
+    "business_name": "PeakForm Studio",
+    "tagline": "Fitness that fits your life, not the other way around",
+    "what_they_do": "PeakForm is a boutique fitness studio offering personal training, group classes, and nutrition coaching. We work with busy professionals, beginners who feel intimidated by gyms, and athletes looking to break plateaus.",
+    "industry": "Health & Fitness",
+    "target_customers": ["Busy professionals", "Beginners", "Athletes", "People recovering from injury"],
+    "products_services": [
+      {"name": "1:1 Personal Training", "description": "Dedicated trainer, fully customized program, flexible scheduling. Results guaranteed in 90 days.", "best_for": "People who want accountability and a plan built around their schedule"},
+      {"name": "Group HIIT Classes", "description": "High-energy 45-minute classes, 6am–8pm daily. Beginner-friendly modifications always available.", "best_for": "People who want energy and community without the commitment of personal training"},
+      {"name": "Nutrition Coaching", "description": "12-week guided program with weekly check-ins. Real habits, not meal plans.", "best_for": "People who exercise but can't crack the nutrition side"},
+      {"name": "Recovery & Mobility Sessions", "description": "60-minute guided stretching and recovery. Open to non-members.", "best_for": "Athletes, desk workers with chronic tightness, injury recovery"}
+    ],
+    "key_benefits": ["No long-term contracts — month to month", "Free 30-minute intro session for every new member", "Results guarantee — or your money back in 90 days", "Childcare available during morning sessions"],
+    "tone": "warm and motivating",
+    "cta_primary": "Book your free intro session",
+    "contact_or_url": "peakformstudio.com",
+    "source_url": "demo",
+    "_agent": "demo",
+    "owner_context": "Most customers come to us because they've tried gyms before and quit. Top reasons: no accountability, didn't know what to do, felt judged. Our most common question is 'I haven't worked out in years, is this right for me?' Answer is always yes. Most popular service is 1:1 training. Second most common: people who want to lose weight but don't know where to start with food.",
+    "visitor_questions": {
+      "journey_framing": "Tell us a little about where you're starting from — we'll show you exactly what fits.",
+      "questions": [
+        {
+          "id": "q1",
+          "text": "How would you describe your fitness right now?",
+          "purpose": "Identifies starting point and likely service fit",
+          "options": ["Complete beginner — haven't worked out in a while", "I exercise occasionally but inconsistently", "I'm active but stuck or plateaued", "Returning after injury or health issue"]
+        },
+        {
+          "id": "q2",
+          "text": "What's the main thing you're hoping to change?",
+          "purpose": "Identifies primary goal to match service recommendation",
+          "options": ["Lose weight and feel better in my body", "Build strength and real fitness", "Fix my eating habits — exercise isn't the issue", "Recover and move without pain"]
+        },
+        {
+          "id": "q3",
+          "text": "What's held you back from getting results before? (be honest — no judgment here)",
+          "purpose": "Identifies psychological barrier to personalize the message",
+          "options": []
+        }
+      ],
+      "_agent": "demo"
+    }
+  },
+  "demo_saas": {
+    "business_name": "Flowdesk",
+    "tagline": "Close deals faster with less admin",
+    "what_they_do": "Flowdesk is a CRM and sales automation platform for small and mid-size businesses. We replace spreadsheets and missed follow-ups with one system that runs your pipeline automatically.",
+    "industry": "B2B SaaS / Sales Tools",
+    "target_customers": ["Freelancers with 5+ active clients", "Small sales teams (2-20 people)", "Agencies", "Consultants", "Growing startups"],
+    "products_services": [
+      {"name": "Flowdesk Starter", "description": "Full CRM for solo users. Contact management, pipeline tracking, email sequences. $29/month.", "best_for": "Freelancers and solopreneurs who need to stop losing track of leads"},
+      {"name": "Flowdesk Team", "description": "Everything in Starter plus team pipeline views, shared inbox, and deal collaboration. $49/user/month.", "best_for": "Small sales teams who need visibility without complexity"},
+      {"name": "Flowdesk Automate", "description": "AI-powered follow-up sequences, lead scoring, and meeting booking — runs 24/7.", "best_for": "Teams who want to automate the repetitive parts of sales"},
+      {"name": "Done-For-You Setup", "description": "Our team migrates your data, builds your pipeline, and trains your team in one week.", "best_for": "Teams switching from Salesforce or HubSpot"}
+    ],
+    "key_benefits": ["Setup in 30 minutes — not 3 months", "Free migration from any CRM", "14-day free trial, no credit card", "Average customer closes 31% more deals in 90 days"],
+    "tone": "direct and confident",
+    "cta_primary": "Start free trial",
+    "contact_or_url": "flowdesk.io",
+    "source_url": "demo",
+    "_agent": "demo",
+    "owner_context": "Most people come to us because they're drowning in spreadsheets or fed up with Salesforce being too complex. Top question: 'How long does it take to set up?' (answer: 30 mins). Second most common: 'Can it replace HubSpot?' Most popular plan is Team. Most common customer profile: founder or sales lead at a 5-15 person company who is personally doing sales and needs to scale without hiring.",
+    "visitor_questions": {
+      "journey_framing": "Two minutes to understand your situation — then we'll show you exactly how Flowdesk fits.",
+      "questions": [
+        {
+          "id": "q1",
+          "text": "How are you managing your sales pipeline right now?",
+          "purpose": "Identifies pain point and switching intent",
+          "options": ["Spreadsheets — it's getting messy", "Another CRM (Salesforce, HubSpot, etc.)", "Nothing formal — it's all in my head or email", "I have a system but it doesn't work well"]
+        },
+        {
+          "id": "q2",
+          "text": "What's the biggest sales problem you need to solve?",
+          "purpose": "Identifies primary use case for product recommendation",
+          "options": ["I'm losing track of leads and follow-ups", "My team has no visibility into the pipeline", "I spend too much time on manual tasks", "I need to close faster and more consistently"]
+        },
+        {
+          "id": "q3",
+          "text": "How big is your sales team, and what are you trying to achieve in the next 90 days?",
+          "purpose": "Qualifies team size and urgency for plan recommendation",
+          "options": []
+        }
+      ],
+      "_agent": "demo"
+    }
+  },
+  "demo_agency": {
+    "business_name": "Kindred Creative",
+    "tagline": "Brand and design for businesses that mean something",
+    "what_they_do": "Kindred Creative is a boutique brand and design agency working with purpose-driven small businesses, nonprofits, and founders. We do brand strategy, visual identity, websites, and content.",
+    "industry": "Creative Agency / Branding",
+    "target_customers": ["Early-stage founders", "Nonprofits and social enterprises", "Small businesses ready for a rebrand", "Entrepreneurs launching something new"],
+    "products_services": [
+      {"name": "Brand Foundation", "description": "3-week brand strategy and identity sprint. Positioning, voice, logo system, and a brand guide.", "best_for": "Businesses launching or rebranding who need a clear, consistent identity"},
+      {"name": "Website Design & Build", "description": "Custom Webflow or Squarespace website. Strategy-first, SEO-ready, editable by your team after launch.", "best_for": "Businesses whose website no longer reflects who they are"},
+      {"name": "Content & Copywriting", "description": "Website copy, brand story, email sequences, pitch decks. Written in your voice.", "best_for": "Founders who know what they want to say but can't make it land"},
+      {"name": "Brand Refresh", "description": "Update your existing brand — refine logo, update colors and fonts, modernize without losing brand equity.", "best_for": "Established businesses that have outgrown their current look"}
+    ],
+    "key_benefits": ["Fixed pricing — no surprise invoices", "You own everything — all files, all source docs", "Free 45-minute brand clarity call before any commitment", "Portfolio of 80+ projects across 12 industries"],
+    "tone": "warm, thoughtful, and creative",
+    "cta_primary": "Book a free brand clarity call",
+    "contact_or_url": "kindredcreative.co",
+    "source_url": "demo",
+    "_agent": "demo",
+    "owner_context": "Most clients come to us because they feel embarrassed sending people to their website, or their brand doesn't match the quality of their work. Most common question: 'How long does a rebrand take?' (3-6 weeks for brand, 6-8 for website). Top service: Brand Foundation first, then website. Most common client: solo founder or small team who has been in business 2-5 years and outgrown their DIY brand.",
+    "visitor_questions": {
+      "journey_framing": "Help us understand where you are — we'll show you the fastest path to a brand that actually works.",
+      "questions": [
+        {
+          "id": "q1",
+          "text": "What's your current brand situation?",
+          "purpose": "Identifies brand maturity and likely service fit",
+          "options": ["I'm launching something new — starting from scratch", "I have a brand but I've outgrown it", "My brand is fine but my website is the problem", "I need help putting my ideas into words"]
+        },
+        {
+          "id": "q2",
+          "text": "What's the moment that made you look for help?",
+          "purpose": "Identifies emotional trigger to personalize the message",
+          "options": ["I felt embarrassed sending someone to my website", "A big opportunity is coming and I'm not ready", "My brand doesn't reflect the quality of my work", "I'm rebranding after a pivot or growth"]
+        },
+        {
+          "id": "q3",
+          "text": "Tell us about your business and what you're trying to communicate — in your own words.",
+          "purpose": "Open context for highly personalized page generation",
+          "options": []
+        }
+      ],
+      "_agent": "demo"
+    }
+  }
+}

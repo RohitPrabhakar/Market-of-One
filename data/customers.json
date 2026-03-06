@@ -1,0 +1,82 @@
+{
+  "C001": {
+    "id": "C001",
+    "name": "Alex Rivera",
+    "industry": "Financial Services",
+    "tenure_months": 14,
+    "communication_style": "Direct/Professional",
+    "recent_signals": [
+      "Viewed premium plan page 3x in 7 days",
+      "Opened last 4 emails within 1 hour",
+      "Support ticket resolved 2 days ago",
+      "Monthly spend increased 22% this quarter"
+    ],
+    "preferences": {
+      "channel": "email",
+      "tone": "data-driven",
+      "frequency": "low"
+    },
+    "lifecycle_stage": "expansion_ready",
+    "last_interaction": "2 days ago"
+  },
+  "C002": {
+    "id": "C002",
+    "name": "Jordan Kim",
+    "industry": "Retail / E-Commerce",
+    "tenure_months": 3,
+    "communication_style": "Warm/Casual",
+    "recent_signals": [
+      "Login frequency dropped 60% this month",
+      "Abandoned onboarding flow at step 4",
+      "Competitor comparison page visited twice",
+      "Last purchase 45 days ago"
+    ],
+    "preferences": {
+      "channel": "in-app",
+      "tone": "friendly",
+      "frequency": "medium"
+    },
+    "lifecycle_stage": "at_risk",
+    "last_interaction": "12 days ago"
+  },
+  "C003": {
+    "id": "C003",
+    "name": "Morgan Patel",
+    "industry": "Healthcare",
+    "tenure_months": 28,
+    "communication_style": "Consultative",
+    "recent_signals": [
+      "Downloaded 3 enterprise whitepapers this week",
+      "Invited 2 colleagues to the platform",
+      "Budget renewal in 30 days",
+      "NPS score: 9 submitted yesterday"
+    ],
+    "preferences": {
+      "channel": "email",
+      "tone": "strategic",
+      "frequency": "low"
+    },
+    "lifecycle_stage": "advocate",
+    "last_interaction": "1 day ago"
+  },
+  "C004": {
+    "id": "C004",
+    "name": "Sam Okonkwo",
+    "industry": "Technology / SaaS",
+    "tenure_months": 1,
+    "communication_style": "Technical",
+    "recent_signals": [
+      "API documentation viewed 8 times",
+      "Integration setup started but not completed",
+      "Support chat initiated twice without resolution",
+      "Free trial expires in 5 days"
+    ],
+    "preferences": {
+      "channel": "in-app",
+      "tone": "technical",
+      "frequency": "high"
+    },
+    "lifecycle_stage": "onboarding",
+    "last_interaction": "today"
+  }
+}

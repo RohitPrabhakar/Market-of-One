@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ARCĀ OS — Market-of-One</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#08090c;--surface:#0f1117;--card:#141720;--border:#1e2335;--text:#e8eaf0;--muted:#5a6480;--accent:#FF9900;--accent-glow:rgba(255,153,0,0.12);--blue:#4d9de0;--green:#4ade80;--mono:'IBM Plex Mono',monospace;--sans:'Sora',sans-serif;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);min-height:100vh;}
+.topbar{padding:16px 32px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;}
+.logo{font-family:var(--mono);font-size:16px;font-weight:500;}
+.logo span{color:var(--accent);}
+.topbar-links{display:flex;gap:20px;font-size:12px;font-family:var(--mono);}
+.topbar-links a{color:var(--muted);text-decoration:none;transition:color 0.2s;}
+.topbar-links a:hover{color:var(--accent);}
+.hero{max-width:680px;margin:80px auto 60px;padding:0 24px;text-align:center;}
+.hero-label{font-family:var(--mono);font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);margin-bottom:20px;}
+.hero h1{font-size:clamp(1.9rem,5vw,3rem);font-weight:700;line-height:1.18;margin-bottom:20px;letter-spacing:-0.02em;}
+.hero h1 em{color:var(--accent);font-style:normal;}
+.hero p{font-size:1.05rem;color:var(--muted);font-weight:300;line-height:1.7;margin-bottom:36px;}
+.hero-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+.btn-primary{background:var(--accent);color:#000;border:none;padding:12px 28px;border-radius:6px;font-family:var(--mono);font-size:12px;font-weight:500;cursor:pointer;text-decoration:none;transition:all 0.2s;letter-spacing:0.05em;display:inline-block;}
+.btn-primary:hover{background:#ffaa20;transform:translateY(-1px);}
+.btn-secondary{background:transparent;color:var(--muted);border:1px solid var(--border);padding:12px 28px;border-radius:6px;font-family:var(--mono);font-size:12px;cursor:pointer;text-decoration:none;transition:all 0.2s;display:inline-block;}
+.btn-secondary:hover{border-color:var(--accent);color:var(--accent);}
+.section-label{max-width:900px;margin:0 auto 20px;padding:0 24px;font-family:var(--mono);font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:12px;}
+.section-label::after{content:'';flex:1;height:1px;background:var(--border);}
+.demos{max-width:900px;margin:0 auto 80px;padding:0 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;}
+.demo-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:24px;cursor:pointer;text-decoration:none;color:var(--text);transition:all 0.25s;display:block;position:relative;overflow:hidden;}
+.demo-card:hover{border-color:var(--accent);transform:translateY(-2px);box-shadow:0 8px 32px rgba(255,153,0,0.08);}
+.demo-industry{font-family:var(--mono);font-size:9px;letter-spacing:0.15em;text-transform:uppercase;color:var(--accent);margin-bottom:12px;}
+.demo-name{font-size:18px;font-weight:600;margin-bottom:8px;}
+.demo-tagline{font-size:13px;color:var(--muted);line-height:1.5;margin-bottom:20px;}
+.demo-cta{font-family:var(--mono);font-size:11px;color:var(--accent);}
+.how-it-works{background:var(--surface);border-top:1px solid var(--border);padding:60px 24px;}
+.how-inner{max-width:800px;margin:0 auto;}
+.how-inner h2{font-size:1.5rem;font-weight:600;text-align:center;margin-bottom:8px;}
+.how-sub{text-align:center;color:var(--muted);font-size:14px;margin-bottom:40px;}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+@media(max-width:600px){.steps{grid-template-columns:1fr;}}
+.step{text-align:center;}
+.step-num{width:40px;height:40px;border-radius:50%;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:14px;font-weight:500;color:var(--accent);margin:0 auto 16px;}
+.step h3{font-size:15px;font-weight:600;margin-bottom:8px;}
+.step p{font-size:13px;color:var(--muted);line-height:1.6;}
+.mode-badge{display:inline-block;font-family:var(--mono);font-size:10px;padding:4px 10px;border-radius:4px;margin-left:8px;vertical-align:middle;}
+.mode-live{background:rgba(74,222,128,0.1);color:var(--green);border:1px solid rgba(74,222,128,0.2);}
+.mode-demo{background:rgba(255,153,0,0.1);color:var(--accent);border:1px solid rgba(255,153,0,0.2);}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div class="logo"><span>ARCĀ</span> OS</div>
+  <div class="topbar-links">
+    <a href="/setup">Load Your Business →</a>
+    <a href="https://github.com/rohitprabhakar/arca-os" target="_blank">GitHub</a>
+    <a href="https://rohitprabhakar.com" target="_blank">by Rohit Prabhakar</a>
+  </div>
+</div>
+<div class="hero">
+  <div class="hero-label">ARCĀ OS · Market-of-One Living System</div>
+  <h1>Every visitor gets a website<br>built <em>just for them</em></h1>
+  <p>Load any business. Answer 3 questions. Watch the system rebuild the entire experience around you — your need, your situation, your moment.</p>
+  <div class="hero-actions">
+    <a href="/setup" class="btn-primary">↑ Load My Business</a>
+    <a href="#demos" class="btn-secondary">See Demos ↓</a>
+  </div>
+</div>
+<div class="section-label" id="demos">Try a demo business</div>
+<div class="demos">
+  {% for d in demos %}
+  <a class="demo-card" href="/visit/{{ d.id }}">
+    <div class="demo-industry">{{ d.industry }}</div>
+    <div class="demo-name">{{ d.name }}</div>
+    <div class="demo-tagline">{{ d.tagline }}</div>
+    <div class="demo-cta">Experience it as a visitor →</div>
+  </a>
+  {% endfor %}
+</div>
+<div class="how-it-works">
+  <div class="how-inner">
+    <h2>How it works{% if live_mode %}<span class="mode-badge mode-live">LIVE AI</span>{% else %}<span class="mode-badge mode-demo">DEMO MODE</span>{% endif %}</h2>
+    <p class="how-sub">Three steps. Under 60 seconds. No engineers needed.</p>
+    <div class="steps">
+      <div class="step"><div class="step-num">1</div><h3>Load a business</h3><p>Enter any website URL. The Scraper Agent reads it and extracts products, services, and value props automatically.</p></div>
+      <div class="step"><div class="step-num">2</div><h3>Visitor answers 3 questions</h3><p>The Context Agent builds their real-time profile — who they are, what they need, how urgent it is.</p></div>
+      <div class="step"><div class="step-num">3</div><h3>Page rebuilds for them</h3><p>The Page Agent generates a unique experience — headline, services, proof points, CTA — written for one person. Not a template.</p></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

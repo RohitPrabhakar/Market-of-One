@@ -1,0 +1,110 @@
+{
+  "C001": {
+    "context": {
+      "customer_id": "C001",
+      "name": "Alex Rivera",
+      "intent_score": 87,
+      "risk_score": 12,
+      "primary_signal": "Viewed premium plan page 3x in 7 days",
+      "moment_of_need": "Alex is ready to upgrade but hasn't been given the right nudge at the right moment.",
+      "emotional_state": "curious",
+      "recommended_action_type": "expand",
+      "context_summary": "High-intent customer showing strong expansion signals. Recent support resolution creates a trust window. Strike now with a value-forward upgrade prompt.",
+      "_agent": "context_agent",
+      "_model": "demo_mode"
+    },
+    "content": {
+      "subject_line": "Your usage is outgrowing your current plan",
+      "message_body": "Alex — your team's activity this quarter tells a clear story: you're getting real value, and you're bumping against the edges of what your current plan allows. I pulled your numbers. The Premium tier would reduce your per-unit cost by 18% at your current volume, and unlock the API access your team has been requesting. Worth 15 minutes this week?",
+      "call_to_action": "See my personalized upgrade summary",
+      "channel": "email",
+      "urgency": "within_24h",
+      "personalization_rationale": "Support ticket resolved 2 days ago creates a trust window; upgrade framed as financial insight, not a sales push — matches Alex's data-driven style.",
+      "in_flow_trigger": "premium_page_view_threshold_exceeded",
+      "_agent": "content_agent",
+      "_model": "demo_mode"
+    },
+    "latency": { "context_ms": 312, "content_ms": 489 }
+  },
+  "C002": {
+    "context": {
+      "customer_id": "C002",
+      "name": "Jordan Kim",
+      "intent_score": 23,
+      "risk_score": 78,
+      "primary_signal": "Login frequency dropped 60% this month",
+      "moment_of_need": "Jordan is quietly disengaging. Without intervention in the next 48 hours, churn probability crosses 70%.",
+      "emotional_state": "hesitant",
+      "recommended_action_type": "rescue",
+      "context_summary": "At-risk early-stage customer showing classic pre-churn pattern. Onboarding was incomplete — the problem isn't the product, it's activation. One well-timed human touch could reverse this.",
+      "_agent": "context_agent",
+      "_model": "demo_mode"
+    },
+    "content": {
+      "subject_line": "Did we lose you somewhere, Jordan?",
+      "message_body": "Hey Jordan — I noticed you haven't been back in a while, and I wanted to reach out personally. A lot of teams hit a wall at step 4 of setup — it's genuinely the trickiest part. I can get you from where you are to fully live in about 20 minutes. No deck, no sales call. Just a quick screen share and you'll see why the teams who get through setup don't leave.",
+      "call_to_action": "Book a 20-min setup call",
+      "channel": "in-app",
+      "urgency": "immediate",
+      "personalization_rationale": "Warm/casual tone matches Jordan's profile; rescue framed as human empathy not retention tactic; specific reference to step 4 abandonment shows the system was paying attention.",
+      "in_flow_trigger": "login_frequency_drop_60pct_7day",
+      "_agent": "content_agent",
+      "_model": "demo_mode"
+    },
+    "latency": { "context_ms": 287, "content_ms": 412 }
+  },
+  "C003": {
+    "context": {
+      "customer_id": "C003",
+      "name": "Morgan Patel",
+      "intent_score": 94,
+      "risk_score": 5,
+      "primary_signal": "Invited 2 colleagues to the platform this week",
+      "moment_of_need": "Morgan is an active advocate at renewal time. This is a moment to celebrate, deepen the relationship, and introduce enterprise expansion.",
+      "emotional_state": "loyal",
+      "recommended_action_type": "celebrate",
+      "context_summary": "High-value advocate with budget renewal in 30 days. NPS 9, bringing colleagues in — this customer is doing your sales job. Acknowledge it. Then make the renewal frictionless.",
+      "_agent": "context_agent",
+      "_model": "demo_mode"
+    },
+    "content": {
+      "subject_line": "Morgan, you've become one of our best champions",
+      "message_body": "Morgan — I wanted to reach out before your renewal because something stood out. In the last 7 days you've brought two colleagues onto the platform and submitted a 9 on NPS. That kind of advocacy matters more than any marketing campaign we could run. Your renewal is coming up in 30 days. I've asked your account team to put together an enterprise proposal that reflects your actual usage and growth — no surprises, just a fair path forward. You'll have it by end of week.",
+      "call_to_action": "Preview your renewal proposal",
+      "channel": "email",
+      "urgency": "within_week",
+      "personalization_rationale": "Strategic/consultative tone matches Morgan's profile; opens with genuine recognition before any commercial ask; renewal framed as a reward, not a transaction.",
+      "in_flow_trigger": "colleague_invite_plus_renewal_window_30d",
+      "_agent": "content_agent",
+      "_model": "demo_mode"
+    },
+    "latency": { "context_ms": 334, "content_ms": 521 }
+  },
+  "C004": {
+    "context": {
+      "customer_id": "C004",
+      "name": "Sam Okonkwo",
+      "intent_score": 61,
+      "risk_score": 55,
+      "primary_signal": "Free trial expires in 5 days, integration incomplete",
+      "moment_of_need": "Sam is technically capable but blocked. The integration is 80% done. One specific technical answer unlocks conversion.",
+      "emotional_state": "frustrated",
+      "recommended_action_type": "educate",
+      "context_summary": "High-potential technical buyer stuck at the finish line. Support gaps have created friction. The path to conversion is removing one specific technical blocker, not a sales pitch.",
+      "_agent": "context_agent",
+      "_model": "demo_mode"
+    },
+    "content": {
+      "subject_line": "Your integration is 80% there — here's the last piece",
+      "message_body": "Sam — you've been deep in the API docs, and I can see the integration is almost there. The auth handshake step that usually trips people up at your stage has a known workaround that isn't in the docs yet. I'm attaching the exact code snippet. Your trial has 5 days left — if you hit it today, I'll extend by a week so the pressure is off and you can test properly.",
+      "call_to_action": "Get the integration fix + trial extension",
+      "channel": "in-app",
+      "urgency": "immediate",
+      "personalization_rationale": "Technical tone matches Sam's profile; leads with the specific blocker not a generic check-in; trial extension offer removes time anxiety and signals good faith.",
+      "in_flow_trigger": "trial_expiry_5d_integration_incomplete",
+      "_agent": "content_agent",
+      "_model": "demo_mode"
+    },
+    "latency": { "context_ms": 298, "content_ms": 467 }
+  }
+}

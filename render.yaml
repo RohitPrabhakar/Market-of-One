@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: arca-os
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python app.py
+    envVars:
+      - key: OPENAI_API_KEY
+        sync: false        # Render will prompt for this — leave blank for demo mode
+      - key: PORT
+        value: 5000

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Load Your Business — ARCĀ OS</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#08090c;--surface:#0f1117;--card:#141720;--border:#1e2335;--text:#e8eaf0;--muted:#5a6480;--accent:#FF9900;--green:#4ade80;--red:#f87171;--mono:'IBM Plex Mono',monospace;--sans:'Sora',sans-serif;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);min-height:100vh;}
+.topbar{padding:16px 32px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;}
+.logo{font-family:var(--mono);font-size:16px;font-weight:500;text-decoration:none;color:var(--text);}
+.logo span{color:var(--accent);}
+.back{font-family:var(--mono);font-size:12px;color:var(--muted);text-decoration:none;transition:color 0.2s;}
+.back:hover{color:var(--accent);}
+.main{max-width:600px;margin:0 auto;padding:64px 24px 80px;}
+.page-label{font-family:var(--mono);font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;}
+h1{font-size:2rem;font-weight:700;margin-bottom:12px;letter-spacing:-0.02em;}
+.subtitle{color:var(--muted);font-size:14px;line-height:1.7;margin-bottom:40px;}
+.no-key{background:rgba(255,153,0,0.08);border:1px solid rgba(255,153,0,0.25);border-radius:8px;padding:20px;margin-bottom:32px;}
+.no-key h3{font-size:14px;font-weight:600;color:var(--accent);margin-bottom:8px;}
+.no-key p{font-size:13px;color:var(--muted);line-height:1.6;}
+.no-key code{background:rgba(255,255,255,0.06);padding:2px 6px;border-radius:3px;font-family:var(--mono);font-size:12px;color:var(--text);}
+.form-group{margin-bottom:24px;}
+.form-label{display:block;font-family:var(--mono);font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;}
+.form-hint{font-size:12px;color:var(--muted);margin-bottom:10px;line-height:1.5;}
+.form-input{width:100%;background:var(--card);border:1px solid var(--border);border-radius:6px;padding:14px 16px;color:var(--text);font-family:var(--sans);font-size:15px;transition:border-color 0.2s;outline:none;}
+.form-input:focus{border-color:var(--accent);}
+.form-input::placeholder{color:var(--muted);}
+textarea.form-input{resize:vertical;min-height:130px;line-height:1.6;font-size:14px;}
+.context-prompts{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;}
+.prompt-tag{background:var(--surface);border:1px solid var(--border);border-radius:4px;padding:5px 10px;font-size:11px;color:var(--muted);cursor:pointer;transition:all 0.2s;font-family:var(--mono);}
+.prompt-tag:hover{border-color:var(--accent);color:var(--accent);}
+.divider{border:none;border-top:1px solid var(--border);margin:8px 0 24px;}
+.btn-load{width:100%;background:var(--accent);color:#000;border:none;padding:14px;border-radius:6px;font-family:var(--mono);font-size:13px;font-weight:500;cursor:pointer;transition:all 0.2s;letter-spacing:0.05em;display:flex;align-items:center;justify-content:center;gap:10px;}
+.btn-load:hover{background:#ffaa20;}
+.btn-load:disabled{background:var(--border);color:var(--muted);cursor:not-allowed;}
+.spinner{width:14px;height:14px;border:2px solid rgba(0,0,0,0.3);border-top-color:#000;border-radius:50%;animation:spin 0.7s linear infinite;display:none;}
+@keyframes spin{to{transform:rotate(360deg);}}
+.progress{display:none;margin-top:32px;}
+.progress-step{display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--border);font-size:13px;}
+.progress-step:last-child{border-bottom:none;}
+.p-icon{width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0;}
+.p-pending{background:var(--border);color:var(--muted);}
+.p-running{background:rgba(255,153,0,0.2);color:var(--accent);animation:pulse 1.5s ease-in-out infinite;}
+.p-done{background:rgba(74,222,128,0.15);color:var(--green);}
+@keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.5;}}
+.result-card{display:none;margin-top:32px;background:var(--card);border:1px solid rgba(74,222,128,0.3);border-radius:10px;padding:24px;}
+.result-header{display:flex;align-items:flex-start;gap:10px;margin-bottom:20px;}
+.result-check{font-size:20px;}
+.result-biz-name{font-size:18px;font-weight:600;}
+.result-tagline{font-size:13px;color:var(--muted);margin-top:2px;}
+.questions-preview{margin-bottom:20px;}
+.q-prev-label{font-family:var(--mono);font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);margin-bottom:10px;}
+.q-prev-item{background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:10px 14px;margin-bottom:8px;font-size:13px;}
+.q-prev-num{font-family:var(--mono);font-size:10px;color:var(--accent);margin-bottom:4px;}
+.your-link-box{background:rgba(255,153,0,0.08);border:1px solid rgba(255,153,0,0.25);border-radius:6px;padding:16px;}
+.link-label{font-family:var(--mono);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:8px;}
+.link-url{font-family:var(--mono);font-size:13px;color:var(--text);word-break:break-all;margin-bottom:12px;}
+.btn-copy{background:var(--accent);color:#000;border:none;padding:8px 20px;border-radius:5px;font-family:var(--mono);font-size:11px;cursor:pointer;transition:all 0.2s;}
+.btn-copy:hover{background:#ffaa20;}
+.btn-visit{display:inline-block;margin-left:8px;background:transparent;color:var(--accent);border:1px solid rgba(255,153,0,0.4);padding:8px 20px;border-radius:5px;font-family:var(--mono);font-size:11px;cursor:pointer;text-decoration:none;transition:all 0.2s;}
+.btn-visit:hover{background:rgba(255,153,0,0.1);}
+.error-msg{display:none;background:rgba(248,113,113,0.08);border:1px solid rgba(248,113,113,0.25);border-radius:6px;padding:16px;margin-top:16px;font-size:13px;color:var(--red);}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <a class="logo" href="/"><span>ARCĀ</span> OS</a>
+  <a class="back" href="/">← Back to demos</a>
+</div>
+<div class="main">
+  <div class="page-label">Business Setup</div>
+  <h1>Load your business</h1>
+  <p class="subtitle">Enter your URL and tell us about your customers. The system reads your site, learns your context, and generates smart personalized questions for every visitor — specific to your business.</p>
+
+  {% if not live_mode %}
+  <div class="no-key">
+    <h3>⚠ OpenAI key needed for URL loading</h3>
+    <p>Add your key to <code>.env</code>: <code>OPENAI_API_KEY=sk-your-key-here</code><br><br>
+    Or <a href="/" style="color:var(--accent)">try a demo business</a> — no key needed. Each demo shows how custom questions work per industry.</p>
+  </div>
+  {% endif %}
+
+  <div class="form-group">
+    <label class="form-label">Your website URL</label>
+    <input class="form-input" type="url" id="url-input" placeholder="https://yourwebsite.com" {% if not live_mode %}disabled{% endif %}>
+  </div>
+
+  <hr class="divider">
+
+  <div class="form-group">
+    <label class="form-label">Tell us about your customers & business</label>
+    <p class="form-hint">The more specific you are, the smarter the visitor questions will be. What do people usually come to you for? What do they ask most? Who are your best customers?</p>
+    <textarea class="form-input" id="context-input" placeholder="e.g. Most people come to us because they're frustrated with their current CRM. Our most common question is 'how long does setup take?' Our best customers are sales teams of 5-15 people who are growing fast and can't afford to waste time on admin..." {% if not live_mode %}disabled{% endif %}></textarea>
+    <div class="context-prompts">
+      <span class="prompt-tag" onclick="addPrompt('Most customers come to us because...')">+ Why they come</span>
+      <span class="prompt-tag" onclick="addPrompt('Our most popular service is...')">+ Top service</span>
+      <span class="prompt-tag" onclick="addPrompt('The most common question we get is...')">+ Common question</span>
+      <span class="prompt-tag" onclick="addPrompt('Our best customers are...')">+ Best customers</span>
+    </div>
+  </div>
+
+  <button class="btn-load" id="load-btn" onclick="loadBusiness()" {% if not live_mode %}disabled{% endif %}>
+    <div class="spinner" id="spinner"></div>
+    <span id="btn-label">Build My Visitor Experience</span>
+  </button>
+
+  <div class="error-msg" id="error-msg"></div>
+
+  <div class="progress" id="progress">
+    <div class="progress-step"><div class="p-icon p-pending" id="p1">1</div><span>Reading your website</span></div>
+    <div class="progress-step"><div class="p-icon p-pending" id="p2">2</div><span>Extracting products &amp; services</span></div>
+    <div class="progress-step"><div class="p-icon p-pending" id="p3">3</div><span>Generating smart visitor questions</span></div>
+    <div class="progress-step"><div class="p-icon p-pending" id="p4">4</div><span>Building your personalization system</span></div>
+  </div>
+
+  <div class="result-card" id="result-card">
+    <div class="result-header">
+      <div class="result-check">✅</div>
+      <div>
+        <div class="result-biz-name" id="r-name">—</div>
+        <div class="result-tagline" id="r-tagline">—</div>
+      </div>
+    </div>
+    <div class="questions-preview">
+      <div class="q-prev-label">Generated visitor questions — unique to your business</div>
+      <div id="r-questions"></div>
+    </div>
+    <div class="your-link-box">
+      <div class="link-label">Share this link with anyone</div>
+      <div class="link-url" id="r-link">—</div>
+      <button class="btn-copy" onclick="copyLink()">Copy Link</button>
+      <a class="btn-visit" id="r-visit" href="#">See It As a Visitor →</a>
+    </div>
+  </div>
+</div>
+
+<script>
+let bizId = null;
+
+function addPrompt(text) {
+  const ta = document.getElementById('context-input');
+  const current = ta.value.trim();
+  ta.value = current ? current + '\n' + text : text;
+  ta.focus();
+}
+
+async function loadBusiness() {
+  const url = document.getElementById('url-input').value.trim();
+  if (!url) return;
+
+  const ownerContext = document.getElementById('context-input').value.trim();
+  const btn = document.getElementById('load-btn');
+  const spinner = document.getElementById('spinner');
+  const progress = document.getElementById('progress');
+  const errorMsg = document.getElementById('error-msg');
+
+  btn.disabled = true;
+  spinner.style.display = 'block';
+  document.getElementById('btn-label').textContent = 'Working...';
+  progress.style.display = 'block';
+  errorMsg.style.display = 'none';
+  document.getElementById('result-card').style.display = 'none';
+
+  setStep('p1', 'running');
+
+  try {
+    const res = await fetch('/api/scrape', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({url, owner_context: ownerContext})
+    });
+
+    setStep('p1', 'done'); setStep('p2', 'running');
+    await new Promise(r => setTimeout(r, 300));
+    setStep('p2', 'done'); setStep('p3', 'running');
+
+    const data = await res.json();
+    if (data.error) throw new Error(data.error);
+
+    await new Promise(r => setTimeout(r, 300));
+    setStep('p3', 'done'); setStep('p4', 'running');
+    await new Promise(r => setTimeout(r, 300));
+    setStep('p4', 'done');
+
+    bizId = data.biz_id;
+    showResult(data.profile, bizId);
+
+  } catch(e) {
+    errorMsg.textContent = 'Error: ' + e.message;
+    errorMsg.style.display = 'block';
+    ['p1','p2','p3','p4'].forEach(p => setStep(p, 'pending'));
+  } finally {
+    btn.disabled = false;
+    spinner.style.display = 'none';
+    document.getElementById('btn-label').textContent = 'Try Another URL';
+  }
+}
+
+function setStep(id, state) {
+  const el = document.getElementById(id);
+  el.className = 'p-icon';
+  const n = id.replace('p','');
+  if (state === 'running') { el.classList.add('p-running'); el.textContent = '◎'; }
+  else if (state === 'done') { el.classList.add('p-done'); el.textContent = '✓'; }
+  else { el.classList.add('p-pending'); el.textContent = n; }
+}
+
+function showResult(profile, id) {
+  document.getElementById('r-name').textContent = profile.business_name;
+  document.getElementById('r-tagline').textContent = profile.tagline;
+
+  const qs = profile.visitor_questions?.questions || [];
+  document.getElementById('r-questions').innerHTML = qs.map((q, i) => `
+    <div class="q-prev-item">
+      <div class="q-prev-num">Q${i+1}</div>
+      <div>${q.text}</div>
+    </div>
+  `).join('');
+
+  const link = window.location.origin + '/visit/' + id;
+  document.getElementById('r-link').textContent = link;
+  document.getElementById('r-visit').href = '/visit/' + id;
+  document.getElementById('result-card').style.display = 'block';
+}
+
+function copyLink() {
+  navigator.clipboard.writeText(document.getElementById('r-link').textContent)
+    .then(() => {
+      const btn = document.querySelector('.btn-copy');
+      btn.textContent = 'Copied!';
+      setTimeout(() => btn.textContent = 'Copy Link', 2000);
+    });
+}
+</script>
+</body>
+</html>
