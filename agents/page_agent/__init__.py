@@ -62,6 +62,7 @@ Return ONLY valid JSON:
 
 
 def run(visitor_context: dict, business_profile: dict) -> dict:
+    from openai import OpenAI
     client = OpenAI()
     """
     Generate a complete personalized page for one visitor.

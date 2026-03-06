@@ -64,6 +64,7 @@ def scrape_url(url: str) -> str:
 
 
 def run(url: str) -> dict:
+    from openai import OpenAI
     client = OpenAI()
     """
     Scrape a URL and return a structured business profile.

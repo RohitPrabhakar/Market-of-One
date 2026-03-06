@@ -28,6 +28,7 @@ Return ONLY valid JSON:
 
 
 def run(answers: dict, visitor_id: str = None) -> dict:
+    from openai import OpenAI
     client = OpenAI()
     if not visitor_id:
         visitor_id = str(uuid.uuid4())[:8]

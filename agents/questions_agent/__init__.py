@@ -55,6 +55,7 @@ Return ONLY valid JSON:
 
 
 def run(business_profile: dict, owner_context: str) -> dict:
+    from openai import OpenAI
     client = OpenAI()
     """
     Generate business-specific visitor questions.

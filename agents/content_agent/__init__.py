@@ -49,6 +49,7 @@ Output schema:
 
 
 def run(context_profile: dict, customer: dict) -> dict:
+    from openai import OpenAI
     client = OpenAI()
     """
     Generate a hyper-personalized message from context profile.
