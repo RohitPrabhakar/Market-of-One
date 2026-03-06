@@ -49,58 +49,55 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);min-height:1
 .gen-step.active{color:var(--accent);}
 .gen-step.done{color:var(--green);}
 
-/* LIVE PAGE */
+/* EXPERIENCE */
 #experience{display:none;}
 .inflow-bar{background:var(--surface);border-bottom:1px solid var(--border);padding:10px 24px;display:flex;align-items:center;justify-content:space-between;font-family:var(--mono);font-size:11px;flex-wrap:wrap;gap:8px;}
-.inflow-left{color:var(--muted);}
-.inflow-left strong{color:var(--accent);}
 .signal-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--green);margin-right:6px;animation:pulse 2s infinite;}
 @keyframes pulse{0%,100%{opacity:1;}50%{opacity:.3;}}
-.inflow-stats{display:flex;gap:16px;}
 .inflow-stat{color:var(--muted);}
 .inflow-stat strong{color:var(--green);}
 
 /* HERO */
 .hero{max-width:780px;margin:0 auto;padding:72px 24px 56px;text-align:center;}
 .hero-greeting{font-family:var(--mono);font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;}
-.hero-headline{font-size:clamp(1.8rem,5vw,2.8rem);font-weight:700;line-height:1.15;margin-bottom:18px;letter-spacing:-.02em;}
-.hero-sub{font-size:1rem;color:var(--muted);font-weight:300;line-height:1.7;max-width:560px;margin:0 auto 32px;}
-.btn-hero-cta{background:var(--accent);color:#000;border:none;padding:14px 36px;border-radius:8px;font-family:var(--mono);font-size:13px;font-weight:500;cursor:pointer;letter-spacing:.05em;transition:all .2s;display:inline-block;text-decoration:none;}
-.btn-hero-cta:hover{background:#ffaa20;transform:translateY(-1px);}
+.hero-headline{font-size:clamp(1.8rem,5vw,2.7rem);font-weight:700;line-height:1.15;margin-bottom:18px;letter-spacing:-.02em;}
+.hero-sub{font-size:1rem;color:var(--muted);line-height:1.7;max-width:560px;margin:0 auto 32px;}
+.btn-hero{background:var(--accent);color:#000;border:none;padding:14px 36px;border-radius:8px;font-family:var(--mono);font-size:13px;font-weight:500;cursor:pointer;letter-spacing:.05em;transition:all .2s;text-decoration:none;display:inline-block;}
+.btn-hero:hover{background:#ffaa20;transform:translateY(-1px);}
+.btn-hero-outline{background:transparent;color:var(--muted);border:1px solid var(--border);padding:14px 28px;border-radius:8px;font-family:var(--mono);font-size:12px;cursor:pointer;text-decoration:none;display:inline-block;margin-left:12px;transition:all .2s;}
+.btn-hero-outline:hover{border-color:var(--accent);color:var(--accent);}
 
 /* SECTIONS */
 .page-sections{max-width:780px;margin:0 auto;padding:0 24px 80px;}
-.content-section{border:1px solid var(--border);border-radius:12px;padding:32px;margin-bottom:20px;transition:border-color .3s;}
-.content-section:hover{border-color:rgba(255,153,0,.15);}
-.section-eyebrow{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;margin-bottom:12px;}
+.section{border:1px solid var(--border);border-radius:12px;padding:32px;margin-bottom:20px;}
+.eyebrow{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;margin-bottom:14px;}
 .eyebrow-blue{color:var(--blue);}
 .eyebrow-green{color:var(--green);}
 .eyebrow-orange{color:var(--accent);}
-.content-section h2{font-size:1.25rem;font-weight:700;margin-bottom:12px;line-height:1.3;}
-.content-section p{font-size:.95rem;color:var(--muted);line-height:1.8;margin-bottom:0;}
+.section h2{font-size:1.2rem;font-weight:700;margin-bottom:12px;line-height:1.35;}
+.section p{font-size:.95rem;color:var(--muted);line-height:1.8;}
 
-/* SECTION ACTIONS */
-.section-actions{display:flex;align-items:center;gap:10px;margin-top:20px;flex-wrap:wrap;}
-.btn-tell-more{background:rgba(255,153,0,.1);color:var(--accent);border:1px solid rgba(255,153,0,.3);padding:8px 16px;border-radius:6px;font-family:var(--mono);font-size:11px;cursor:pointer;transition:all .2s;}
-.btn-tell-more:hover{background:rgba(255,153,0,.2);}
-.btn-not-relevant{background:transparent;color:var(--muted);border:1px solid var(--border);padding:8px 16px;border-radius:6px;font-family:var(--mono);font-size:11px;cursor:pointer;transition:all .2s;}
-.btn-not-relevant:hover{border-color:var(--red);color:var(--red);}
-.btn-cta{background:var(--accent);color:#000;border:none;padding:10px 22px;border-radius:6px;font-family:var(--mono);font-size:12px;font-weight:500;cursor:pointer;text-decoration:none;display:inline-block;transition:all .2s;}
-.btn-cta:hover{background:#ffaa20;}
-.btn-cta-outline{background:transparent;color:var(--accent);border:1px solid rgba(255,153,0,.4);padding:10px 22px;border-radius:6px;font-family:var(--mono);font-size:12px;cursor:pointer;text-decoration:none;display:inline-block;transition:all .2s;}
-.btn-cta-outline:hover{background:rgba(255,153,0,.08);}
+/* INTERACTIVE ELEMENTS embedded in sections */
+.section-interact{margin-top:20px;}
+.interact-prompt{font-size:.9rem;font-weight:600;color:var(--text);margin-bottom:12px;}
+.chip-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:4px;}
+.chip{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:7px 16px;font-size:13px;cursor:pointer;transition:all .2s;color:var(--muted);}
+.chip:hover{border-color:var(--accent);color:var(--accent);}
+.chip.selected{border-color:var(--green);background:rgba(74,222,128,.1);color:var(--green);}
+.chip.dismiss{border-color:transparent;background:transparent;}
+.chip.dismiss:hover{border-color:var(--red);color:var(--red);}
 
 /* RECOMMENDED CARDS */
-.rec-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:16px;}
-.rec-card{background:var(--surface);border:1px solid var(--border);border-radius:9px;padding:20px;transition:border-color .2s;display:flex;flex-direction:column;}
+.rec-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-top:16px;}
+.rec-card{background:var(--surface);border:1px solid var(--border);border-radius:9px;padding:20px;display:flex;flex-direction:column;transition:border-color .2s;}
 .rec-card:hover{border-color:var(--blue);}
-.rec-match{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);margin-bottom:8px;}
-.rec-name{font-size:14px;font-weight:600;margin-bottom:7px;}
+.rec-match{font-family:var(--mono);font-size:10px;letter-spacing:.08em;color:var(--blue);margin-bottom:8px;line-height:1.4;}
+.rec-name{font-size:14px;font-weight:700;margin-bottom:6px;}
 .rec-desc{font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:10px;flex:1;}
-.rec-outcome{font-family:var(--mono);font-size:11px;color:var(--green);margin-bottom:12px;line-height:1.5;}
-.rec-price{font-family:var(--mono);font-size:11px;color:var(--muted);margin-bottom:12px;}
-.rec-cta{font-family:var(--mono);font-size:11px;font-weight:500;color:var(--accent);text-decoration:none;display:inline-block;transition:color .2s;}
-.rec-cta:hover{color:#ffaa20;text-decoration:underline;}
+.rec-outcome{font-family:var(--mono);font-size:11px;color:var(--green);margin-bottom:8px;line-height:1.5;}
+.rec-price{font-family:var(--mono);font-size:11px;color:var(--muted);margin-bottom:14px;}
+.btn-rec{font-family:var(--mono);font-size:11px;font-weight:500;color:var(--accent);text-decoration:none;display:inline-block;border:1px solid rgba(255,153,0,.3);padding:7px 14px;border-radius:5px;transition:all .2s;}
+.btn-rec:hover{background:rgba(255,153,0,.1);}
 
 /* PROOF */
 .proof-list{display:flex;flex-direction:column;gap:10px;margin-top:4px;}
@@ -110,43 +107,40 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);min-height:1
 /* TESTIMONIALS */
 .testimonial-grid{display:flex;flex-direction:column;gap:12px;margin-top:16px;}
 .testimonial{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:18px 20px;}
-.testimonial-text{font-size:.9rem;color:var(--text);line-height:1.7;margin-bottom:10px;font-style:italic;}
-.testimonial-name{font-family:var(--mono);font-size:10px;color:var(--accent);letter-spacing:.08em;}
+.t-text{font-size:.9rem;color:var(--text);line-height:1.7;margin-bottom:8px;font-style:italic;}
+.t-name{font-family:var(--mono);font-size:10px;color:var(--accent);}
 
-/* INLINE ELEMENTS */
-.inline-element{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:20px;margin-top:16px;}
-.inline-q{font-size:.95rem;font-weight:600;margin-bottom:14px;}
-.inline-options{display:flex;flex-direction:column;gap:8px;}
-.inline-option{background:var(--card);border:1px solid var(--border);border-radius:7px;padding:11px 15px;cursor:pointer;font-size:13px;text-align:left;color:var(--text);transition:all .2s;width:100%;}
-.inline-option:hover{border-color:var(--accent);background:rgba(255,153,0,.06);}
-.inline-option.selected{border-color:var(--green);background:rgba(74,222,128,.08);color:var(--green);}
-.inline-text-wrap{display:flex;gap:8px;}
-.inline-text{flex:1;background:var(--card);border:1px solid var(--border);border-radius:7px;padding:11px 15px;color:var(--text);font-family:var(--sans);font-size:14px;outline:none;transition:border-color .2s;}
-.inline-text:focus{border-color:var(--accent);}
-.inline-text::placeholder{color:var(--muted);}
-.btn-inline-submit{background:var(--accent);color:#000;border:none;padding:11px 18px;border-radius:7px;font-family:var(--mono);font-size:11px;font-weight:500;cursor:pointer;white-space:nowrap;}
-.btn-inline-submit:hover{background:#ffaa20;}
-
-/* FREE TEXT INPUT BAR */
-.free-text-bar{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:20px 24px;margin-bottom:20px;}
-.free-text-label{font-family:var(--mono);font-size:11px;color:var(--muted);margin-bottom:12px;letter-spacing:.08em;}
-.free-text-wrap{display:flex;gap:10px;}
-.free-text-input{flex:1;background:var(--card);border:1px solid var(--border);border-radius:7px;padding:12px 16px;color:var(--text);font-family:var(--sans);font-size:14px;outline:none;transition:border-color .2s;}
-.free-text-input:focus{border-color:var(--accent);}
-.free-text-input::placeholder{color:var(--muted);}
-
-/* FINAL CTA */
-.final-cta-section{text-align:center;padding:48px 32px;border:1px solid var(--border);border-radius:12px;margin-bottom:20px;}
-.final-cta-section h2{font-size:1.6rem;font-weight:700;margin-bottom:14px;}
-.final-cta-section p{font-size:.95rem;color:var(--muted);line-height:1.7;max-width:480px;margin:0 auto 28px;}
-.final-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+/* FREE TEXT */
+.ask-bar{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:20px 24px;margin-bottom:20px;}
+.ask-label{font-family:var(--mono);font-size:11px;color:var(--muted);margin-bottom:10px;letter-spacing:.08em;}
+.ask-wrap{display:flex;gap:10px;}
+.ask-input{flex:1;background:var(--card);border:1px solid var(--border);border-radius:7px;padding:12px 16px;color:var(--text);font-family:var(--sans);font-size:14px;outline:none;transition:border-color .2s;}
+.ask-input:focus{border-color:var(--accent);}
+.ask-input::placeholder{color:var(--muted);}
+.btn-ask{background:var(--accent);color:#000;border:none;padding:12px 18px;border-radius:7px;font-family:var(--mono);font-size:12px;font-weight:500;cursor:pointer;white-space:nowrap;}
+.btn-ask:hover{background:#ffaa20;}
 
 /* ADAPTING */
 .adapting-pill{display:none;align-items:center;gap:8px;background:rgba(255,153,0,.08);border:1px solid rgba(255,153,0,.2);border-radius:20px;padding:8px 16px;font-family:var(--mono);font-size:11px;color:var(--accent);margin:0 auto 16px;width:fit-content;}
 .adapting-pill.visible{display:flex;}
 .adapt-spinner{width:12px;height:12px;border:2px solid rgba(255,153,0,.3);border-top-color:var(--accent);border-radius:50%;animation:spin .7s linear infinite;}
+
+/* INJECTED */
 .slide-in{animation:slideIn .5s ease forwards;}
 @keyframes slideIn{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:translateY(0);}}
+
+/* FINAL CTA */
+.final-section{text-align:center;padding:48px 32px;border:1px solid var(--border);border-radius:12px;margin-bottom:20px;}
+.final-section h2{font-size:1.6rem;font-weight:700;margin-bottom:14px;}
+.final-section p{font-size:.95rem;color:var(--muted);line-height:1.7;max-width:480px;margin:0 auto 28px;}
+.final-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+.btn-final{background:var(--accent);color:#000;border:none;padding:14px 32px;border-radius:8px;font-family:var(--mono);font-size:13px;font-weight:500;cursor:pointer;text-decoration:none;display:inline-block;transition:all .2s;}
+.btn-final:hover{background:#ffaa20;}
+.btn-final-sec{background:transparent;color:var(--muted);border:1px solid var(--border);padding:14px 28px;border-radius:8px;font-family:var(--mono);font-size:12px;cursor:pointer;text-decoration:none;display:inline-block;transition:all .2s;}
+.btn-final-sec:hover{border-color:var(--accent);color:var(--accent);}
+
+/* DEMO LINK NOTICE */
+.demo-notice{display:inline-block;font-family:var(--mono);font-size:10px;color:var(--muted);background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:4px;padding:3px 8px;margin-left:8px;vertical-align:middle;}
 
 .page-footer{text-align:center;font-family:var(--mono);font-size:10px;color:var(--muted);padding:20px 24px 40px;border-top:1px solid var(--border);}
 .page-footer a{color:var(--muted);text-decoration:none;}
@@ -176,8 +170,8 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);min-height:1
   <div>
     <div class="gen-spinner"></div>
     <p style="font-size:1.05rem;font-weight:600;margin-top:20px;">Building your page...</p>
-    <p style="font-size:13px;color:var(--muted);margin-top:6px;">This page will keep adapting as you interact with it.</p>
-    <div id="gen-steps" style="margin-top:16px;">
+    <p style="font-size:13px;color:var(--muted);margin-top:6px;">The page adapts as you interact with it.</p>
+    <div style="margin-top:16px;">
       <div class="gen-step" id="gs1">◎ Understanding who you are</div>
       <div class="gen-step" id="gs2">◎ Matching to what you need</div>
       <div class="gen-step" id="gs3">◎ Writing your experience</div>
@@ -188,95 +182,105 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);min-height:1
 <!-- EXPERIENCE -->
 <div id="experience">
   <div class="inflow-bar">
-    <div class="inflow-left"><span class="signal-dot"></span><strong>Live</strong> — this page is reading your signals</div>
-    <div class="inflow-stats">
+    <div><span class="signal-dot"></span><span style="color:var(--accent);font-family:var(--mono);font-size:11px;"><strong>Live</strong> — adapts to your signals</span></div>
+    <div style="display:flex;gap:16px;">
       <div class="inflow-stat">Adapted: <strong id="stat-adapted">0</strong>×</div>
-      <div class="inflow-stat">Latency: <strong id="stat-latency">—</strong></div>
-      <div class="inflow-stat"><span style="color:var(--accent)">Market-of-One</span></div>
+      <div class="inflow-stat">Mode: <strong id="stat-mode">—</strong></div>
+      <div class="inflow-stat" style="color:var(--accent);font-family:var(--mono);font-size:11px;">Market-of-One</div>
     </div>
   </div>
 
-  <!-- HERO -->
   <div class="hero">
     <div class="hero-greeting" id="exp-greeting"></div>
     <h1 class="hero-headline" id="exp-headline"></h1>
     <p class="hero-sub" id="exp-sub"></p>
-    <a class="btn-hero-cta" id="exp-cta" href="#" target="_blank" rel="noopener"></a>
+    <div>
+      <a class="btn-hero" id="exp-cta" href="#" target="_blank" rel="noopener"></a>
+      <a class="btn-hero-outline" id="exp-visit" href="#" target="_blank" rel="noopener">Visit website</a>
+    </div>
   </div>
 
-  <!-- DYNAMIC SECTIONS -->
   <div class="page-sections" id="page-sections">
 
-    <!-- INSIGHT -->
-    <div class="content-section" id="section-insight" data-section="insight">
-      <div class="section-eyebrow eyebrow-blue">Our read on your situation</div>
+    <!-- INSIGHT — with embedded chip question -->
+    <div class="section" id="sec-insight" data-section="insight">
+      <div class="eyebrow eyebrow-blue">Our read on your situation</div>
       <h2 id="insight-headline"></h2>
       <p id="insight-body"></p>
-      <div class="section-actions">
-        <button class="btn-tell-more" onclick="signal('tell_more','insight')">↓ Tell me more</button>
-        <button class="btn-not-relevant" onclick="signal('not_relevant','insight')">Not relevant</button>
+      <div class="section-interact">
+        <div class="interact-prompt">Does this sound right?</div>
+        <div class="chip-row">
+          <button class="chip" onclick="chipSignal('tell_more','insight','Yes, tell me more')">Yes, tell me more</button>
+          <button class="chip" onclick="chipSignal('option_select','insight','Partly right')">Partly right</button>
+          <button class="chip dismiss" onclick="chipSignal('not_relevant','insight','Not my situation')">Not my situation →</button>
+        </div>
       </div>
     </div>
 
-    <!-- RECOMMENDED -->
-    <div class="content-section" id="section-recommended" data-section="recommended">
-      <div class="section-eyebrow eyebrow-green">Recommended for you</div>
+    <!-- RECOMMENDED — chips to select service interest -->
+    <div class="section" id="sec-recommended" data-section="recommended">
+      <div class="eyebrow eyebrow-green">Recommended for you</div>
       <h2>Based on what you shared</h2>
       <div class="rec-grid" id="rec-grid"></div>
-      <div class="section-actions">
-        <button class="btn-tell-more" onclick="signal('tell_more','recommended')">↓ Tell me more</button>
-        <button class="btn-not-relevant" onclick="signal('not_relevant','recommended')">Show me something else</button>
+      <div class="section-interact" style="margin-top:24px;">
+        <div class="interact-prompt">What matters most to you right now?</div>
+        <div class="chip-row" id="rec-chips"></div>
       </div>
     </div>
 
-    <!-- PROOF / BENEFITS -->
-    <div class="content-section" id="section-proof" data-section="proof">
-      <div class="section-eyebrow eyebrow-orange">Why people choose us</div>
+    <!-- PROOF — with a challenge chip -->
+    <div class="section" id="sec-proof" data-section="proof">
+      <div class="eyebrow eyebrow-orange">Why people choose us</div>
       <h2>What makes this different</h2>
       <div class="proof-list" id="proof-list"></div>
-      <div class="section-actions">
-        <button class="btn-tell-more" onclick="signal('tell_more','proof')">↓ Tell me more</button>
-        <button class="btn-not-relevant" onclick="signal('not_relevant','proof')">Not relevant</button>
+      <div class="section-interact">
+        <div class="interact-prompt">What's your biggest hesitation?</div>
+        <div class="chip-row">
+          <button class="chip" onclick="chipSignal('option_select','proof','Price')">Price</button>
+          <button class="chip" onclick="chipSignal('option_select','proof','Time commitment')">Time commitment</button>
+          <button class="chip" onclick="chipSignal('option_select','proof','Not sure it will work for me')">Not sure it works for me</button>
+          <button class="chip" onclick="chipSignal('option_select','proof','No hesitation')">No hesitation →</button>
+        </div>
       </div>
     </div>
 
     <!-- TESTIMONIALS -->
-    <div class="content-section" id="section-testimonials" data-section="testimonials">
-      <div class="section-eyebrow eyebrow-green">Real results</div>
+    <div class="section" id="sec-testimonials" data-section="testimonials">
+      <div class="eyebrow eyebrow-green">Real results</div>
       <h2>People like you, before and after</h2>
       <div class="testimonial-grid" id="testimonial-grid"></div>
-      <div class="section-actions">
-        <button class="btn-tell-more" onclick="signal('tell_more','testimonials')">↓ More stories</button>
-        <button class="btn-not-relevant" onclick="signal('not_relevant','testimonials')">Not relevant</button>
+      <div class="section-interact">
+        <div class="interact-prompt">Which story is closest to yours?</div>
+        <div class="chip-row" id="testimonial-chips"></div>
       </div>
     </div>
 
-    <!-- FREE TEXT INPUT -->
-    <div class="free-text-bar" id="section-freetxt" data-section="freetxt">
-      <div class="free-text-label">STILL HAVE A QUESTION? — the page will respond</div>
-      <div class="free-text-wrap">
-        <input class="free-text-input" id="main-free-text" placeholder="What are you still unsure about? Type anything...">
-        <button class="btn-inline-submit" onclick="submitFreeText()">→</button>
+    <!-- FREE TEXT — always visible -->
+    <div class="ask-bar">
+      <div class="ask-label">STILL HAVE A QUESTION? — the page will respond</div>
+      <div class="ask-wrap">
+        <input class="ask-input" id="main-ask" placeholder="What are you still unsure about? The page will adapt to your answer...">
+        <button class="btn-ask" onclick="submitAsk()">→</button>
       </div>
     </div>
 
-    <!-- ADAPTING PILL -->
+    <!-- ADAPTING INDICATOR -->
     <div class="adapting-pill" id="adapting-pill">
       <div class="adapt-spinner"></div>
-      Reading your signal...
+      Adapting to your signal...
     </div>
 
-    <!-- INJECTED SECTIONS LAND HERE -->
+    <!-- INJECTED SECTIONS -->
     <div id="injected-sections"></div>
 
-    <!-- FINAL CTA — always last -->
-    <div class="final-cta-section" id="section-final">
-      <div class="section-eyebrow eyebrow-orange" style="margin-bottom:16px;">Your next step</div>
+    <!-- FINAL CTA -->
+    <div class="final-section">
+      <div class="eyebrow eyebrow-orange" style="margin-bottom:16px;">Your next step</div>
       <h2 id="final-headline"></h2>
       <p id="final-body"></p>
       <div class="final-actions">
-        <a class="btn-cta" id="final-cta-primary" href="#" target="_blank" rel="noopener"></a>
-        <a class="btn-cta-outline" id="final-cta-secondary" href="#" target="_blank" rel="noopener"></a>
+        <a class="btn-final" id="final-primary" href="#" target="_blank" rel="noopener"></a>
+        <a class="btn-final-sec" id="final-secondary" href="#" target="_blank" rel="noopener"></a>
       </div>
     </div>
 
@@ -292,14 +296,14 @@ body{background:var(--bg);color:var(--text);font-family:var(--sans);min-height:1
 <script>
 const bizId = "{{ biz_id }}";
 const questionsData = {{ questions | tojson if questions else 'null' }};
-const bizCtaUrl = "{{ business.cta_url | default(business.contact_or_url, true) }}";
-const bizContactUrl = "{{ business.contact_or_url }}";
+const isDemo = "{{ business.source_url }}" === "demo";
 
-let answers = {}, visitorContext = {}, signals = [], injectionCount = 0;
+let answers = {}, visitorContext = {}, bizData = {};
+let signals = [], injectionCount = 0;
 let dwellTimers = {};
 const MAX_INJECTIONS = 6;
 
-// ── ONBOARDING ─────────────────────────────────────────────────────────────
+// ── QUESTIONS ──────────────────────────────────────────────────────────────
 
 const defaultQ = {
   journey_framing: "Three quick questions — then we rebuild this page around your needs.",
@@ -328,8 +332,8 @@ function buildQuestions() {
         ${input}
         <div class="q-nav">
           <div class="q-dots">${dots}</div>
-          <button class="btn-next" id="qbtn-${i}" onclick="${isLast?'startGenerate()':('goTo('+(i+1)+')')}" disabled>
-            ${isLast ? 'Build My Experience →' : 'Next →'}
+          <button class="btn-next" id="qbtn-${i}" onclick="${isLast?'startGenerate()':'goTo('+(i+1)+')'}" disabled>
+            ${isLast?'Build My Experience →':'Next →'}
           </button>
         </div>
       </div>`;
@@ -357,7 +361,6 @@ function goTo(n) {
 // ── GENERATE ──────────────────────────────────────────────────────────────
 
 async function startGenerate() {
-  // Capture last open input if needed
   const lastQ = qs.questions[totalQ-1];
   if (!lastQ.options?.length) {
     answers[lastQ.text] = document.getElementById(`qi-${totalQ-1}`)?.value.trim() || '';
@@ -378,6 +381,7 @@ async function startGenerate() {
     if (data.error) throw new Error(data.error);
     setGs('gs3','done');
     visitorContext = data.context || {};
+    bizData = data.business || {};
     await new Promise(r => setTimeout(r, 400));
     renderPage(data);
   } catch(e) {
@@ -394,82 +398,102 @@ function setGs(id, state) {
   if (state === 'done') { el.classList.add('done'); el.textContent = '✓ ' + el.textContent.slice(2); }
 }
 
-// ── RENDER PAGE ────────────────────────────────────────────────────────────
+// ── RENDER ─────────────────────────────────────────────────────────────────
 
 function renderPage(data) {
-  const p = data.page, biz = data.business, lat = data.latency;
+  const p = data.page, biz = data.business;
 
-  document.getElementById('stat-latency').textContent = lat.total_ms > 0 ? lat.total_ms + 'ms' : 'demo';
+  // Mode indicator
+  document.getElementById('stat-mode').textContent = data.mode === 'live' ? 'Live AI' : 'Demo';
 
-  // Hero — CTA links to actual business URL
+  // Real URLs — if demo business, note it
+  const ctaUrl = biz.cta_url || biz.contact_or_url || '#';
+  const visitUrl = biz.contact_or_url || '#';
+
+  // Hero
   document.getElementById('exp-greeting').textContent = p.hero.greeting;
   document.getElementById('exp-headline').textContent = p.hero.headline;
   document.getElementById('exp-sub').textContent = p.hero.subheadline;
   const heroCta = document.getElementById('exp-cta');
   heroCta.textContent = p.hero.primary_cta;
-  heroCta.href = biz.cta_url || biz.contact_or_url || '#';
+  heroCta.href = ctaUrl;
+  document.getElementById('exp-visit').href = visitUrl;
 
   // Insight
   document.getElementById('insight-headline').textContent = p.insight.headline;
   document.getElementById('insight-body').textContent = p.insight.body;
 
-  // Recommended — with outcomes, prices, real links
+  // Recommended — with outcome + price + real CTA link
+  const svcs = biz.products_services || [];
   document.getElementById('rec-grid').innerHTML = (p.recommended || []).map(r => {
-    // Find matching service for outcome/price
-    const svc = (biz.products_services || []).find(s => s.name === r.name) || {};
-    const outcomeHTML = svc.outcome ? `<div class="rec-outcome">→ ${svc.outcome}</div>` : '';
-    const priceHTML = svc.price ? `<div class="rec-price">${svc.price}</div>` : '';
+    const svc = svcs.find(s => s.name === r.name) || {};
     return `
       <div class="rec-card">
-        <div class="rec-match">${r.match_reason || 'Recommended'}</div>
+        <div class="rec-match">${r.match_reason || ''}</div>
         <div class="rec-name">${r.name}</div>
         <div class="rec-desc">${r.description}</div>
-        ${outcomeHTML}
-        ${priceHTML}
-        <a class="rec-cta" href="${biz.cta_url || biz.contact_or_url || '#'}" target="_blank" rel="noopener">${r.cta || 'Learn more →'}</a>
+        ${svc.outcome ? `<div class="rec-outcome">→ ${svc.outcome}</div>` : ''}
+        ${svc.price ? `<div class="rec-price">${svc.price}</div>` : ''}
+        <a class="btn-rec" href="${ctaUrl}" target="_blank" rel="noopener">${r.cta || 'Learn more →'}</a>
       </div>`;
   }).join('');
+
+  // Rec chips — unique per business service
+  document.getElementById('rec-chips').innerHTML = svcs.slice(0,4).map(s =>
+    `<button class="chip" onclick="chipSignal('option_select','recommended','${s.name.replace(/'/g,"\\'")}')">
+      ${s.name}
+    </button>`
+  ).join('') + `<button class="chip dismiss" onclick="chipSignal('not_relevant','recommended','None of these')">None of these</button>`;
 
   // Proof
   document.getElementById('proof-list').innerHTML = (p.proof_points || []).map(pt =>
     `<div class="proof-item"><span class="proof-check">✓</span><span>${pt}</span></div>`).join('');
 
-  // Testimonials from business data
+  // Testimonials
   const testimonials = biz.testimonials || [];
   if (testimonials.length) {
-    document.getElementById('testimonial-grid').innerHTML = testimonials.map(t => `
-      <div class="testimonial">
-        <div class="testimonial-text">"${t.result}"</div>
-        <div class="testimonial-name">— ${t.name}</div>
+    document.getElementById('testimonial-grid').innerHTML = testimonials.map(t =>
+      `<div class="testimonial">
+        <div class="t-text">"${t.result}"</div>
+        <div class="t-name">— ${t.name}</div>
       </div>`).join('');
+    document.getElementById('testimonial-chips').innerHTML = testimonials.map((t,i) =>
+      `<button class="chip" onclick="chipSignal('option_select','testimonials','Story ${i+1}: ${t.name}')">
+        ${t.name}
+      </button>`).join('');
   } else {
-    document.getElementById('section-testimonials').style.display = 'none';
+    document.getElementById('sec-testimonials').style.display = 'none';
   }
 
-  // Final CTA — both buttons link to real URLs
+  // Final CTA — real links
   document.getElementById('final-headline').textContent = p.next_step?.headline || 'Ready to take the next step?';
-  document.getElementById('final-body').textContent = p.next_step?.body || 'No commitment needed.';
-
-  const primaryCta = document.getElementById('final-cta-primary');
-  primaryCta.textContent = p.next_step?.cta || biz.cta_primary || 'Get started';
-  primaryCta.href = biz.cta_url || biz.contact_or_url || '#';
-
-  const secondaryCta = document.getElementById('final-cta-secondary');
-  secondaryCta.textContent = p.next_step?.secondary_cta || 'Visit website';
-  secondaryCta.href = biz.contact_or_url || '#';
+  document.getElementById('final-body').textContent = p.next_step?.body || '';
+  const fp = document.getElementById('final-primary');
+  fp.textContent = p.next_step?.cta || biz.cta_primary || 'Get started';
+  fp.href = ctaUrl;
+  const fs = document.getElementById('final-secondary');
+  fs.textContent = 'Visit ' + (biz.business_name || 'website');
+  fs.href = visitUrl;
 
   document.getElementById('generating').style.display = 'none';
   document.getElementById('experience').style.display = 'block';
   window.scrollTo(0,0);
-  startDwellTracking();
 
-  // Enter key on free text
-  document.getElementById('main-free-text').addEventListener('keydown', e => {
-    if (e.key === 'Enter') submitFreeText();
+  // Enter key on ask bar
+  document.getElementById('main-ask').addEventListener('keydown', e => {
+    if (e.key === 'Enter') submitAsk();
   });
+
+  startDwellTracking();
 }
 
 // ── SIGNALS ────────────────────────────────────────────────────────────────
+
+function chipSignal(type, sectionId, value) {
+  // Mark chip selected visually
+  event.target.classList.add('selected');
+  signal(type, sectionId, value);
+}
 
 function signal(type, sectionId, value = null) {
   if (injectionCount >= MAX_INJECTIONS) return;
@@ -477,14 +501,12 @@ function signal(type, sectionId, value = null) {
   adapt();
 }
 
-function submitFreeText() {
-  const val = document.getElementById('main-free-text').value.trim();
+function submitAsk() {
+  const val = document.getElementById('main-ask').value.trim();
   if (!val) return;
-  signal('free_text', 'freetxt', val);
-  document.getElementById('main-free-text').value = '';
+  signal('free_text', 'ask', val);
+  document.getElementById('main-ask').value = '';
 }
-
-// ── DWELL ──────────────────────────────────────────────────────────────────
 
 function startDwellTracking() {
   const observer = new IntersectionObserver(entries => {
@@ -494,7 +516,7 @@ function startDwellTracking() {
       if (entry.isIntersecting) {
         dwellTimers[id] = setTimeout(() => { signal('dwell', id); delete dwellTimers[id]; }, 30000);
       } else {
-        if (dwellTimers[id]) { clearTimeout(dwellTimers[id]); delete dwellTimers[id]; }
+        clearTimeout(dwellTimers[id]); delete dwellTimers[id];
       }
     });
   }, { threshold: 0.5 });
@@ -517,81 +539,87 @@ async function adapt() {
     if (data.section) {
       injectionCount = data.injection_count;
       document.getElementById('stat-adapted').textContent = injectionCount;
-      injectSection(data.section);
+      injectSection(data.section, bizData);
     }
-  } catch(e) { console.error('Adapt error:', e); }
+  } catch(e) { console.error(e); }
   finally { pill.classList.remove('visible'); }
 }
 
-// ── INJECT SECTION ─────────────────────────────────────────────────────────
+// ── INJECT ─────────────────────────────────────────────────────────────────
 
-function injectSection(s) {
+function injectSection(s, biz) {
   const id = 'inj-' + Date.now();
-  const eyebrowMap = {
-    deep_dive:'eyebrow-blue', social_proof:'eyebrow-green', objection_handler:'eyebrow-orange',
-    comparison:'eyebrow-blue', quick_win:'eyebrow-green', inline_question:'eyebrow-orange', urgency_nudge:'eyebrow-orange'
-  };
+  const ctaUrl = biz.cta_url || biz.contact_or_url || '#';
+
   const labelMap = {
-    deep_dive:'Going deeper', social_proof:'Proof it works', objection_handler:'Good question',
-    comparison:'How it compares', quick_win:'Easiest way in', inline_question:'Quick question', urgency_nudge:'Ready when you are'
+    deep_dive:'Going deeper', social_proof:'Someone like you',
+    objection_handler:'Good question', comparison:'How it compares',
+    quick_win:'Easiest way in', inline_question:'One more thing',
+    urgency_nudge:'Ready when you are'
+  };
+  const colorMap = {
+    deep_dive:'eyebrow-blue', social_proof:'eyebrow-green',
+    objection_handler:'eyebrow-orange', comparison:'eyebrow-blue',
+    quick_win:'eyebrow-green', inline_question:'eyebrow-orange',
+    urgency_nudge:'eyebrow-orange'
   };
 
-  let inlineHTML = '';
+  // Build inline interaction — unique to this injection
+  let interactHTML = '';
   if (s.inline_element?.type === 'multiple_choice' && s.inline_element.options?.length) {
-    inlineHTML = `<div class="inline-element">
-      <div class="inline-q">${s.inline_element.question}</div>
-      <div class="inline-options">
-        ${s.inline_element.options.map(o =>
-          `<button class="inline-option" onclick="inlineSelect(this,'${id}','${o.replace(/'/g,"\\'")}')">${o}</button>`
-        ).join('')}
-      </div></div>`;
+    interactHTML = `
+      <div class="section-interact">
+        <div class="interact-prompt">${s.inline_element.question}</div>
+        <div class="chip-row">
+          ${s.inline_element.options.map(o =>
+            `<button class="chip" onclick="chipSignal('option_select','${id}','${o.replace(/'/g,"\\'")}')">${o}</button>`
+          ).join('')}
+        </div>
+      </div>`;
   } else if (s.inline_element?.type === 'free_text') {
-    inlineHTML = `<div class="inline-element">
-      <div class="inline-q">${s.inline_element.question}</div>
-      <div class="inline-text-wrap">
-        <input class="inline-text" id="ft-${id}" placeholder="Type your answer...">
-        <button class="btn-inline-submit" onclick="submitInlineText('${id}')">→</button>
-      </div></div>`;
+    interactHTML = `
+      <div class="section-interact">
+        <div class="interact-prompt">${s.inline_element.question}</div>
+        <div class="ask-wrap" style="margin-top:8px;">
+          <input class="ask-input" id="ft-${id}" placeholder="Type your answer...">
+          <button class="btn-ask" onclick="inlineSubmit('${id}')">→</button>
+        </div>
+      </div>`;
+  } else {
+    // Always have at least a minimal follow-up
+    interactHTML = `
+      <div class="section-interact">
+        <div class="chip-row">
+          <button class="chip" onclick="chipSignal('tell_more','${id}','Want more depth')">Tell me more</button>
+          <button class="chip dismiss" onclick="chipSignal('not_relevant','${id}','Not relevant')">Not relevant</button>
+          ${s.cta ? `<a class="btn-rec" href="${ctaUrl}" target="_blank" rel="noopener">${s.cta}</a>` : ''}
+        </div>
+      </div>`;
   }
 
-  // CTA links to real business URL
-  const ctaHTML = s.cta
-    ? `<a class="btn-cta" href="${bizCtaUrl}" target="_blank" rel="noopener">${s.cta}</a>` : '';
-
   document.getElementById('injected-sections').insertAdjacentHTML('beforeend', `
-    <div class="content-section slide-in" id="${id}" data-section="${id}">
-      <div class="section-eyebrow ${eyebrowMap[s.section_type]||'eyebrow-blue'}">${labelMap[s.section_type]||'For you'}</div>
+    <div class="section slide-in" id="${id}" data-section="${id}">
+      <div class="eyebrow ${colorMap[s.section_type]||'eyebrow-blue'}">${labelMap[s.section_type]||'For you'}</div>
       <h2>${s.headline}</h2>
       <p>${s.body}</p>
-      ${inlineHTML}
-      <div class="section-actions">
-        ${ctaHTML}
-        <button class="btn-tell-more" onclick="signal('tell_more','${id}')">↓ Tell me more</button>
-        <button class="btn-not-relevant" onclick="signal('not_relevant','${id}')">Not relevant</button>
-      </div>
+      ${interactHTML}
     </div>`);
 
   setTimeout(() => document.getElementById(id)?.scrollIntoView({ behavior:'smooth', block:'start' }), 100);
 
-  // Track dwell on injected section
+  // Dwell on injected section
   const el = document.getElementById(id);
   if (el) {
     new IntersectionObserver(entries => {
       entries.forEach(e => {
         if (e.isIntersecting) dwellTimers[id] = setTimeout(() => { signal('dwell',id); delete dwellTimers[id]; }, 30000);
-        else if (dwellTimers[id]) { clearTimeout(dwellTimers[id]); delete dwellTimers[id]; }
+        else { clearTimeout(dwellTimers[id]); delete dwellTimers[id]; }
       });
     }, {threshold:0.5}).observe(el);
   }
 }
 
-function inlineSelect(el, sectionId, value) {
-  el.closest('.inline-options').querySelectorAll('.inline-option').forEach(o => o.classList.remove('selected'));
-  el.classList.add('selected');
-  signal('option_select', sectionId, value);
-}
-
-function submitInlineText(sid) {
+function inlineSubmit(sid) {
   const val = document.getElementById(`ft-${sid}`)?.value.trim();
   if (val) signal('free_text', sid, val);
 }

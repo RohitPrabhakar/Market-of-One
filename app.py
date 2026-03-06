@@ -267,47 +267,111 @@ def generate_live(answers, biz, visitor_id):
 
 
 def build_mock_page(answers, biz, visitor_id):
+    """Demo mode — uses visitor answers to actually personalize content."""
     q_vals = list(answers.values())
-    need = q_vals[1] if len(q_vals) > 1 else "learn more"
+    q1 = q_vals[0] if len(q_vals) > 0 else ""
+    q2 = q_vals[1] if len(q_vals) > 1 else ""
     free_text = q_vals[2] if len(q_vals) > 2 else ""
     svcs = biz.get("products_services", [])
+
+    # Match Q2 to best service
+    matched_svc = svcs[0] if svcs else {}
+    for s in svcs:
+        keywords = (s.get("best_for", "") + " " + s.get("name", "")).lower()
+        if any(w in keywords for w in q2.lower().split()):
+            matched_svc = s
+            break
+    second_svc = next((s for s in svcs if s != matched_svc), svcs[1] if len(svcs) > 1 else matched_svc)
+
+    # Personalize headline + insight from Q1/Q2
+    q_combined = (q1 + " " + q2).lower()
+    if any(w in q1.lower() for w in ["beginner", "haven't", "while", "years", "quit"]):
+        headline = "You don't need to have it figured out. That's what we're here for."
+        insight_body = ("Most people who come to us say exactly what you said. "
+                        "Starting from scratch is actually easier than fixing bad habits. "
+                        + matched_svc.get("best_for", ""))
+    elif any(w in q_combined for w in ["stuck", "plateau", "inconsistent", "results"]):
+        headline = "Inconsistency isn't a willpower problem. It's a system problem."
+        insight_body = ("You're doing the work — the results just aren't matching the effort. "
+                        "That gap almost always comes down to one missing piece. "
+                        + matched_svc.get("best_for", ""))
+    elif any(w in q_combined for w in ["injury", "recover", "pain", "return"]):
+        headline = "Coming back after injury takes a different approach. We know how."
+        insight_body = ("Returning from injury means your body needs a progression plan, not a generic program. "
+                        + matched_svc.get("best_for", ""))
+    elif any(w in q_combined for w in ["nutrition", "eat", "food", "diet"]):
+        headline = "The exercise is working. The missing piece is what happens in the kitchen."
+        insight_body = ("You already have the discipline to train. "
+                        "Nutrition coaching is about building the same system around food. "
+                        + matched_svc.get("best_for", ""))
+    elif any(w in q_combined for w in ["weight", "lose", "fat"]):
+        headline = "Sustainable results don't come from doing more — they come from doing the right things."
+        insight_body = ("Weight loss that lasts is 30% training and 70% everything else. "
+                        + matched_svc.get("best_for", ""))
+    else:
+        headline = biz.get("tagline", "")
+        insight_body = matched_svc.get("best_for", biz.get("what_they_do", ""))
+
+    def match_reason(svc):
+        if free_text and len(free_text) > 5:
+            return 'You mentioned "' + free_text[:55] + '..." — this fits'
+        return svc.get("best_for", "")[:80] or "Matched to your situation"
+
+    what_they_do = biz.get("what_they_do", "")[:200]
+    benefits = biz.get("key_benefits", [])
+    cta = biz.get("cta_primary", "Get started")
+    benefit_line = benefits[1] if len(benefits) > 1 else ""
+
     return {
-        "visitor_id": visitor_id, "mode": "mock",
+        "visitor_id": visitor_id,
+        "mode": "mock",
         "context": {
-            "name": "there", "primary_need": need,
-            "moment_of_need": f"Visitor wants to {need}",
-            "context_summary": f"Exploring {biz['business_name']} for: {need}. {free_text}",
-            "sophistication": "intermediate", "urgency": "evaluating",
-            "emotional_state": "curious", "intent_score": 65
+            "name": "there",
+            "primary_need": q2 or "learn more",
+            "moment_of_need": q1 + " — looking for: " + q2,
+            "context_summary": q1 + ". Needs: " + q2 + ". " + free_text,
+            "sophistication": "beginner" if any(w in q1.lower() for w in ["beginner", "haven't", "while"]) else "intermediate",
+            "urgency": "ready_to_act" if len(free_text) > 10 else "evaluating",
+            "emotional_state": "frustrated" if any(w in q_combined for w in ["stuck", "failed", "tried"]) else "curious",
+            "intent_score": 75 if free_text else 55
         },
         "page": {
             "hero": {
                 "greeting": "Hi there",
-                "headline": biz["tagline"],
-                "subheadline": biz["what_they_do"],
-                "primary_cta": biz["cta_primary"]
+                "headline": headline,
+                "subheadline": what_they_do,
+                "primary_cta": cta
             },
             "insight": {
-                "headline": "Here's what we think you need",
-                "body": f"Based on what you shared, {biz['what_they_do']}"
+                "headline": "Here's what we think is going on",
+                "body": insight_body
             },
             "recommended": [
-                {"name": s["name"], "match_reason": "Recommended for your situation",
-                 "description": s["description"], "cta": "Learn more →"}
-                for s in svcs[:2]
+                {
+                    "name": matched_svc.get("name", ""),
+                    "match_reason": match_reason(matched_svc),
+                    "description": matched_svc.get("description", ""),
+                    "cta": "Learn more →"
+                },
+                {
+                    "name": second_svc.get("name", ""),
+                    "match_reason": second_svc.get("best_for", "")[:80],
+                    "description": second_svc.get("description", ""),
+                    "cta": "Learn more →"
+                }
             ],
-            "proof_points": biz.get("key_benefits", [])[:3],
+            "proof_points": benefits[:4],
             "next_step": {
-                "headline": "Ready to take the next step?",
-                "body": "No commitment needed. Let's start with a conversation.",
-                "cta": biz["cta_primary"],
-                "secondary_cta": "Learn more first"
-            },
-            "personalization_note": "Add GEMINI_API_KEY for real AI personalization"
+                "headline": "The next step is simpler than you think",
+                "body": cta + " — no commitment, no pressure. " + benefit_line,
+                "cta": cta,
+                "secondary_cta": "Visit website"
+            }
         },
         "business": biz,
         "latency": {"context_ms": 0, "page_ms": 0, "total_ms": 0}
     }
+
 
 
 if __name__ == "__main__":
