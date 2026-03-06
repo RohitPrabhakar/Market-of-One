@@ -80,6 +80,98 @@ def visit(biz_id):
                            questions=questions, live_mode=LIVE_MODE)
 
 
+@app.route("/api/adapt", methods=["POST"])
+def adapt():
+    """Live page adaptation — receive a signal, return next content section."""
+    data = request.get_json()
+    biz_id = data.get("biz_id") or session.get("biz_id")
+    visitor_context = data.get("visitor_context", {})
+    signals = data.get("signals", [])
+    injection_count = data.get("injection_count", 0)
+
+    if not biz_id:
+        return jsonify({"error": "No business selected"}), 400
+    biz = get_business(biz_id)
+    if not biz:
+        return jsonify({"error": "Business not found"}), 404
+
+    if injection_count >= 6:
+        return jsonify({"done": True, "message": "Session complete"})
+
+    if not LIVE_MODE:
+        return jsonify(build_mock_adaptation(signals, biz, injection_count))
+
+    from utils.guardrails import check_and_record
+    ip = get_client_ip()
+    allowed, _ = check_and_record(ip)
+    if not allowed:
+        return jsonify(build_mock_adaptation(signals, biz, injection_count))
+
+    try:
+        from agents.adaptation_agent import run as adapt_run
+        section = adapt_run(visitor_context, signals, biz, injection_count)
+        return jsonify({"section": section, "injection_count": injection_count + 1})
+    except Exception as e:
+        return jsonify(build_mock_adaptation(signals, biz, injection_count))
+
+
+def build_mock_adaptation(signals, biz, injection_count):
+    last_signal = signals[-1] if signals else {}
+    signal_type = last_signal.get("type", "tell_more")
+    section_type = "deep_dive"
+    if signal_type == "not_relevant":
+        section_type = "inline_question"
+    elif signal_type == "free_text":
+        section_type = "objection_handler"
+    elif injection_count > 2:
+        section_type = "quick_win"
+
+    svcs = biz.get("products_services", [])
+    svc = svcs[injection_count % len(svcs)] if svcs else {}
+
+    sections = {
+        "deep_dive": {
+            "headline": f"More on {svc.get('name', 'our approach')}",
+            "body": svc.get("description", biz.get("what_they_do", "")),
+            "inline_element": {"type": "multiple_choice",
+                               "question": "What matters most to you?",
+                               "options": ["Speed of results", "Price", "Ease of getting started", "Proven track record"]},
+            "cta": biz.get("cta_primary")
+        },
+        "inline_question": {
+            "headline": "Let us recalibrate",
+            "body": "We want to show you what's actually relevant. One quick question:",
+            "inline_element": {"type": "multiple_choice",
+                               "question": "What's closest to what you're looking for?",
+                               "options": [s["name"] for s in svcs[:4]] if svcs else ["Option A", "Option B"]},
+            "cta": None
+        },
+        "objection_handler": {
+            "headline": "Here's what people usually wonder about",
+            "body": f"The most common question we get: {biz.get('what_they_do', '')}",
+            "inline_element": {"type": "free_text", "question": "What's holding you back?", "options": []},
+            "cta": None
+        },
+        "quick_win": {
+            "headline": "The easiest way to start",
+            "body": f"No commitment needed. {biz.get('key_benefits', [''])[0] if biz.get('key_benefits') else ''}",
+            "inline_element": {"type": "none", "question": "", "options": []},
+            "cta": biz.get("cta_primary")
+        }
+    }
+
+    content = sections.get(section_type, sections["deep_dive"])
+    return {
+        "section": {
+            "section_type": section_type,
+            **content,
+            "rationale": "mock adaptation",
+            "_agent": "mock"
+        },
+        "injection_count": injection_count + 1
+    }
+
+
 @app.route("/stats")
 def stats():
     """Daily session counter — password protected."""
