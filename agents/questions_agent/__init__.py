@@ -11,10 +11,8 @@ Context Agent immediately more intelligent — because
 the questions themselves are already personalized.
 """
 
-from openai import OpenAI
 import json
 
-client = OpenAI()
 
 SYSTEM_PROMPT = """You are the ARCĀ Questions Agent.
 
@@ -57,6 +55,7 @@ Return ONLY valid JSON:
 
 
 def run(business_profile: dict, owner_context: str) -> dict:
+    client = OpenAI()
     """
     Generate business-specific visitor questions.
 

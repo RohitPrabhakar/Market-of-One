@@ -5,10 +5,8 @@ Synthesizes a visitor's onboarding answers into a
 real-time context profile that drives page generation.
 """
 
-from openai import OpenAI
 import json, uuid
 
-client = OpenAI()
 
 SYSTEM_PROMPT = """You are the ARCĀ Context Agent. A visitor just answered 3 onboarding questions.
 Build their real-time context profile so the Page Agent can generate a personalized experience.
@@ -30,6 +28,7 @@ Return ONLY valid JSON:
 
 
 def run(answers: dict, visitor_id: str = None) -> dict:
+    client = OpenAI()
     if not visitor_id:
         visitor_id = str(uuid.uuid4())[:8]
 

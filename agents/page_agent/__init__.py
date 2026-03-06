@@ -12,10 +12,8 @@ In-Flow AI: The page is generated at the moment the
 visitor completes onboarding. It exists for them alone.
 """
 
-from openai import OpenAI
 import json
 
-client = OpenAI()
 
 SYSTEM_PROMPT = """You are the ARCĀ Page Agent — a hyper-personalization engine.
 
@@ -64,6 +62,7 @@ Return ONLY valid JSON:
 
 
 def run(visitor_context: dict, business_profile: dict) -> dict:
+    client = OpenAI()
     """
     Generate a complete personalized page for one visitor.
 

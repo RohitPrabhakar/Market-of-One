@@ -16,10 +16,8 @@ inline, at the exact moment the signal fires — no campaign
 manager, no approval cycle, no queue.
 """
 
-from openai import OpenAI
 import json
 
-client = OpenAI()
 
 
 SYSTEM_PROMPT = """You are the Content Agent inside the ARCĀ Living System.
@@ -51,6 +49,7 @@ Output schema:
 
 
 def run(context_profile: dict, customer: dict) -> dict:
+    client = OpenAI()
     """
     Generate a hyper-personalized message from context profile.
     

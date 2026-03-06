@@ -13,6 +13,14 @@ app.secret_key = os.environ.get("SECRET_KEY", "arca-os-dev-key-change-in-prod")
 OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY", "")
 LIVE_MODE = bool(OPENAI_API_KEY and not OPENAI_API_KEY.startswith("sk-your"))
 
+@app.errorhandler(500)
+def server_error(e):
+    return jsonify({"error": str(e)}), 500
+
+@app.errorhandler(404)
+def not_found(e):
+    return jsonify({"error": "Not found"}), 404
+
 with open("data/demo_businesses.json") as f:
     DEMO_BUSINESSES = json.load(f)
 

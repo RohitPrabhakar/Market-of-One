@@ -10,10 +10,8 @@ uses to build personalized experiences.
 
 import requests
 from bs4 import BeautifulSoup
-from openai import OpenAI
 import json, re
 
-client = OpenAI()
 
 HEADERS = {
     "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
@@ -66,6 +64,7 @@ def scrape_url(url: str) -> str:
 
 
 def run(url: str) -> dict:
+    client = OpenAI()
     """
     Scrape a URL and return a structured business profile.
 
