@@ -123,10 +123,13 @@ def generate():
 
     visitor_id = str(uuid.uuid4())[:8]
 
-    if not LIVE_MODE:
-        return jsonify(build_mock_page(answers, biz, visitor_id))
-
-    return generate_live(answers, biz, visitor_id)
+    try:
+        if not LIVE_MODE:
+            return jsonify(build_mock_page(answers, biz, visitor_id))
+        return generate_live(answers, biz, visitor_id)
+    except Exception as e:
+        import traceback
+        return jsonify({"error": str(e), "trace": traceback.format_exc()}), 500
 
 
 def generate_live(answers, biz, visitor_id):
