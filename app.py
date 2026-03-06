@@ -128,8 +128,13 @@ def generate():
             return jsonify(build_mock_page(answers, biz, visitor_id))
         return generate_live(answers, biz, visitor_id)
     except Exception as e:
+        err = str(e)
+        if "insufficient_quota" in err or "429" in err or "RateLimitError" in err:
+            result = build_mock_page(answers, biz, visitor_id)
+            result["_notice"] = "Demo mode — add OpenAI credits to enable live AI."
+            return jsonify(result)
         import traceback
-        return jsonify({"error": str(e), "trace": traceback.format_exc()}), 500
+        return jsonify({"error": err, "trace": traceback.format_exc()}), 500
 
 
 def generate_live(answers, biz, visitor_id):
