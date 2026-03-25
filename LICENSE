@@ -169,7 +169,7 @@
 
    END OF TERMS AND CONDITIONS
 
-   Copyright 2026 Rohit Prabhakar
+   Copyright 2026 Rohit Prabhakar — rohitprabhakar.com
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -182,3 +182,31 @@
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
    implied. See the License for the specific language governing
    permissions and limitations under the License.
+
+   ---
+
+   TRADEMARK NOTICE
+
+   This software is the open-source reference implementation of the
+   ARCĀ Framework™ and the Market-of-One™ engine, created by
+   Rohit Prabhakar.
+
+   The following are proprietary trademarks of Rohit Prabhakar,
+   protected under Class 41 and Class 35, and are NOT covered by
+   the Apache 2.0 license granted above:
+
+     · ARCĀ Framework™
+     · ARCĀ™
+     · Market-of-One™
+
+   The Apache 2.0 license grants rights to use, modify, and distribute
+   the software code in this repository. It does not grant any rights
+   to use the ARCĀ Framework™ or Market-of-One™ names, branding,
+   methodology, or associated intellectual property in ways that imply
+   endorsement, affiliation, or ownership of the framework.
+
+   Attribution must be preserved in all distributions and derivative works:
+   "Built on the ARCĀ Framework™ by Rohit Prabhakar — rohitprabhakar.com/arca"
+
+   For framework licensing, advisory, or partnership inquiries:
+   rohitprabhakar.com/contact
